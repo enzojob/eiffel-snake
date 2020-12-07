@@ -33,7 +33,7 @@ public class Main_UI extends Application {
 	static int speedCounter = 0;
 
 	Scene startScene, scene, stopScene, lostScene;
-	Field f;
+	Field field;
 
 	Button buttonStart, buttonExit, buttonReturnMenu, buttonExitInGame, buttonRestartWhenLost, buttonBackToMenuWhenLost,
 			buttonExitWhenLost, buttonSpeed;
@@ -69,7 +69,7 @@ public class Main_UI extends Application {
 		buttonExit.setStyle("-fx-font: 18 arial; -fx-font-weight: bold; -fx-base: #FF4500  ;"); // initializes button
 
 		// Initializations of buttonReturnMenu
-		buttonReturnMenu = new Button("Back to Menu"); // initializes buttonReturnMenu as a new button
+		buttonReturnMenu = new Button("MENU"); // initializes buttonReturnMenu as a new button
 		buttonReturnMenu.setTextFill(Color.WHITE);
 		buttonReturnMenu.setStyle("-fx-font-weight: bold;-fx-background-color: #2F4F4F "); // initializes button color
 
@@ -79,37 +79,36 @@ public class Main_UI extends Application {
 		buttonExitInGame.setStyle(" -fx-font-weight: bold; -fx-background-color: red ;"); // initializes button color
 
 		// Initializations of buttonRestartWhenLost
-		buttonRestartWhenLost = new Button("Restart"); // initializes buttonRestartWhenLost as a new button
-		buttonRestartWhenLost.setPrefSize(100, 50); // set width and height of the buttonRestartWhenLost
+		buttonRestartWhenLost = new Button("RESTART"); // initializes buttonRestartWhenLost as a new button
+		buttonRestartWhenLost.setPrefSize(150, 50); // set width and height of the buttonRestartWhenLost
 		buttonRestartWhenLost.setTextFill(Color.WHITE);
-		buttonRestartWhenLost.setStyle("-fx-font: 18 arial; -fx-font-weight: bold; -fx-base: #32CD32 ;"); // initializes
-																											// button
-																											// color
+		buttonRestartWhenLost.setStyle("-fx-font: 18 arial; -fx-font-weight: bold; -fx-base: #32CD32 ;"); // initializes button color
 
 		// Initializations of buttonBackToMenuWhenLost
-		buttonBackToMenuWhenLost = new Button("Back to Menu"); // initializes buttonBackToMenuWhenLost as a new button
+		buttonBackToMenuWhenLost = new Button("MENU"); // initializes buttonBackToMenuWhenLost as a new button
 		buttonBackToMenuWhenLost.setPrefSize(150, 50); // set width and height of the buttonBackToMenuWhenLost
 		buttonBackToMenuWhenLost.setTextFill(Color.WHITE);
 		buttonBackToMenuWhenLost.setStyle("-fx-font: 18 arial; -fx-font-weight: bold; -fx-base: #FF8C00 ;"); // color
 
 		// Initializations of buttonExitWhenLost
-		buttonExitWhenLost = new Button("Exit"); // initializes buttonExitWhenLost as a new button
-		buttonExitWhenLost.setPrefSize(100, 50); // set width and height of the buttonExitWhenLost
+		buttonExitWhenLost = new Button("EXIT"); // initializes buttonExitWhenLost as a new button
+		buttonExitWhenLost.setPrefSize(150, 50); // set width and height of the buttonExitWhenLost
 		buttonExitWhenLost.setTextFill(Color.WHITE);
 		buttonExitWhenLost.setStyle("-fx-font: 18 arial; -fx-font-weight: bold;-fx-base: #FF4500 ;");
 
 		Label score = new Label(" Score : 0 ");
 		score.setTextFill(Color.WHITE);
-		score.setFont(Font.font(" -fx-font-weight: bold; Arial", 22));
-		f = new Field(SnakeApp.getWidth(), SnakeApp.getHeight());
-		f.addSnake(new Snake(Snake.getIntitalSnakeLength(), f));
+		score.setFont(Font.font("Arial Black", 22));
+		
+		field = new Field(SnakeApp.getWidth(), SnakeApp.getHeight());
+		field.addSnake(new Snake(Snake.getIntitalSnakeLength(), field));
 
 		HBox buttonBox = new HBox(15);
 		buttonBox.setPadding(new Insets(15, 15, 15, 15));
 		buttonBox.setSpacing(10);
 		buttonBox.setAlignment(Pos.BASELINE_CENTER);
 		buttonBox.getChildren().addAll(score, buttonReturnMenu, buttonExitInGame);
-		VBox root = new VBox(10, f, buttonBox);
+		VBox root = new VBox(10, field, buttonBox);
 		root.setPadding(new Insets(10));
 		root.setBackground(new Background(new BackgroundFill(Color.GREEN, null, null))); // set the background color
 
@@ -119,22 +118,22 @@ public class Main_UI extends Application {
 			public void handle(long now) {
 
 				if (now - then > 1000000000 / speedFactor) { // vitesse a laquelle l'affichage est mis a jours
-					f.update();
+					field.update();
 					then = now;
-					score.setText("Score: " + f.score);
+					score.setText("Score: " + field.score);
 					changed = false;
 
 					if (hasNext) {
-						setDirection(f.snake, nextUpdate);
+						setDirection(field.snake, nextUpdate);
 						hasNext = false;
 					}
 
-					if (f.isDead()) {
+					if (field.isDead()) {
 
 						VBox lost = new VBox(15);
 						lost.setPadding(new Insets(15, 15, 15, 15));
-						Label finalScore = new Label("Your final Score is : " + f.score);
-						finalScore.setFont(Font.font("Arial", 32));
+						Label finalScore = new Label("Your final Score is : " + field.score);
+						finalScore.setFont(Font.font("Arial Black", 24));
 
 						lost.getChildren().addAll(finalScore, buttonRestartWhenLost, buttonBackToMenuWhenLost,
 								buttonExitWhenLost);
@@ -148,10 +147,10 @@ public class Main_UI extends Application {
 						buttonRestartWhenLost.setOnAction(new EventHandler<ActionEvent>() {
 							public void handle(ActionEvent event) {
 								root.getChildren().clear();
-								f = new Field(SnakeApp.getWidth(), SnakeApp.getHeight());
-								f.addSnake(new Snake(Snake.getIntitalSnakeLength(), f));
+								field = new Field(SnakeApp.getWidth(), SnakeApp.getHeight());
+								field.addSnake(new Snake(Snake.getIntitalSnakeLength(), field));
 								score.setText("Score : 0");
-								root.getChildren().addAll(f, buttonBox);
+								root.getChildren().addAll(field, buttonBox);
 
 								ps.setResizable(false);
 								ps.setScene(scene);
@@ -165,16 +164,13 @@ public class Main_UI extends Application {
 								ps.setScene(startScene);
 								ps.show();
 							}
-
 						});
 
 						buttonExitWhenLost.setOnAction(new EventHandler<ActionEvent>() {
 							public void handle(ActionEvent event) {
 								System.exit(0);
 							}
-
 						});
-
 					}
 				}
 			}
@@ -183,17 +179,17 @@ public class Main_UI extends Application {
 		timer.start();
 
 		scene.setOnKeyPressed(e -> {
-			if (e.getCode().equals(KeyCode.UP) && f.snake.getDirection() != Block.DOWN) {
-				setDirection(f.snake, Block.UP);
+			if (e.getCode().equals(KeyCode.UP) && field.snake.getDirection() != Block.DOWN) {
+				setDirection(field.snake, Block.UP);
 			}
-			if (e.getCode().equals(KeyCode.DOWN) && f.snake.getDirection() != Block.UP) {
-				setDirection(f.snake, Block.DOWN);
+			if (e.getCode().equals(KeyCode.DOWN) && field.snake.getDirection() != Block.UP) {
+				setDirection(field.snake, Block.DOWN);
 			}
-			if (e.getCode().equals(KeyCode.RIGHT) && f.snake.getDirection() != Block.LEFT) {
-				setDirection(f.snake, Block.RIGHT);
+			if (e.getCode().equals(KeyCode.RIGHT) && field.snake.getDirection() != Block.LEFT) {
+				setDirection(field.snake, Block.RIGHT);
 			}
-			if (e.getCode().equals(KeyCode.LEFT) && f.snake.getDirection() != Block.RIGHT) {
-				setDirection(f.snake, Block.LEFT);
+			if (e.getCode().equals(KeyCode.LEFT) && field.snake.getDirection() != Block.RIGHT) {
+				setDirection(field.snake, Block.LEFT);
 			}
 		});
 
@@ -202,10 +198,10 @@ public class Main_UI extends Application {
 			public void handle(ActionEvent event) {
 
 				root.getChildren().clear();
-				f = new Field(SnakeApp.getWidth(), SnakeApp.getHeight());
-				f.addSnake(new Snake(Snake.getIntitalSnakeLength(), f));
+				field = new Field(SnakeApp.getWidth(), SnakeApp.getHeight());
+				field.addSnake(new Snake(Snake.getIntitalSnakeLength(), field));
 				score.setText("Score : 0");
-				root.getChildren().addAll(f, buttonBox);
+				root.getChildren().addAll(field, buttonBox);
 
 				ps.setResizable(false);
 				ps.setScene(scene);
@@ -213,7 +209,6 @@ public class Main_UI extends Application {
 
 				ps.show();
 			}
-
 		});
 
 		buttonExit.setOnAction(new EventHandler<ActionEvent>() { // met en action le boutton pour quitter interface
@@ -245,8 +240,7 @@ public class Main_UI extends Application {
 			}
 		});
 
-		// met en action le boutton pour la V
-		buttonSpeed.setOnAction(new EventHandler<ActionEvent>() {
+		buttonSpeed.setOnAction(new EventHandler<ActionEvent>() {	// met en action le boutton pour la vitesse
 			@Override
 			public void handle(ActionEvent event) {
 				buttonSpeed.setText(setSpeed());
@@ -255,19 +249,19 @@ public class Main_UI extends Application {
 		});
 	}
 
-	public void setDirection(Snake s, int d) {
+	public void setDirection(Snake snake, int direction) {
 		if (!changed) {
-			s.setDirection(d);
+			snake.setDirection(direction);
 			changed = true;
 		} else {
 			hasNext = true;
-			nextUpdate = d;
+			nextUpdate = direction;
 		}
 	}
 
 	public String setSpeed() {
 		String[] speedArray = { "EASY", "MEDIUM", "HARD", };
-		int[] factorArray = { 8, 16, 32 };
+		int[] factorArray = { 8, 12, 16 };
 
 		if (speedCounter < 2) {
 			speedCounter++;

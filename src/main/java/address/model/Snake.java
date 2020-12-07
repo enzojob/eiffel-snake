@@ -15,11 +15,11 @@ public class Snake {
 	public Block head;
 	public Block tail;
 
-	public Snake(int il, Field f) {
-		int ipx = f.getW() / 2;
-		int ipy = f.getH() / 2;
+	public Snake(int initialSnakeLength, Field field) {
+		int initialPositionX = field.getW() / 2;
+		int initialPositionY = field.getH() / 2;
 
-		head = new Block(ipx, ipy, null, f);
+		head = new Block(initialPositionX, initialPositionY, null, field);
 		blocks.add(head);
 
 		head.setArcHeight(SnakeApp.getBlockSize()  / 2);
@@ -27,10 +27,10 @@ public class Snake {
 
 		tail = head;
 
-		for (int i = 1; i < il; i++) {
-			Block b = new Block(ipx + i, ipy, tail, f);
-			blocks.add(b);
-			tail = b;
+		for (int i = 1; i < initialSnakeLength; i++) {
+			Block block = new Block(initialPositionX + i, initialPositionY, tail, field);
+			blocks.add(block);
+			tail = block;
 		}
 	}
 
@@ -42,7 +42,7 @@ public class Snake {
 		return intitalSnakeLength;
 	}
 
-	public void setDirection(int d) {
-		head.direction = d;
+	public void setDirection(int direction) {
+		head.direction = direction;
 	}
 }
