@@ -6,7 +6,7 @@ import address.presentation.Main_UI;
 
 public class SnakeApp {
 
-    private static final int blockSize = 25; // size of a block
+    private static final int blockSize = 30; // size of a block
     private static final int width = 25;
     private static final int height = 20;
     private static Snake snake;
