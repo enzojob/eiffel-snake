@@ -1,5 +1,8 @@
 package Snake;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -8,6 +11,8 @@ import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
@@ -31,7 +36,7 @@ public class Main_UI extends Application {
 	Button buttonStart, buttonExit, buttonReturnMenu, buttonExitInGame, buttonRestartWhenLost, buttonBackToMenuWhenLost,
 			buttonExitWhenLost;
 
-	public void start(Stage ps) {
+	public void start(Stage ps) throws FileNotFoundException {
 
 		VBox start = new VBox(10);
 
@@ -90,7 +95,7 @@ public class Main_UI extends Application {
 
 		buttonRestartWhenLost.setPrefSize(100, 50); // set width and height of the buttonRestartWhenLost
 
-		buttonRestartWhenLost.setTranslateX(190); // positions button in X axes
+		buttonRestartWhenLost.setTranslateX(300); // positions button in X axes
 		buttonRestartWhenLost.setTranslateY(20); // positions button in Y axes
 
 		buttonRestartWhenLost.setStyle("-fx-background-color: green"); // initializes button color
@@ -101,7 +106,7 @@ public class Main_UI extends Application {
 
 		buttonBackToMenuWhenLost.setPrefSize(100, 50); // set width and height of the buttonBackToMenuWhenLost
 
-		buttonBackToMenuWhenLost.setTranslateX(190); // positions button in X axes
+		buttonBackToMenuWhenLost.setTranslateX(300); // positions button in X axes
 		buttonBackToMenuWhenLost.setTranslateY(30); // positions button in Y axes
 
 		buttonBackToMenuWhenLost.setStyle("-fx-background-color: pink"); // initializes button color
@@ -111,7 +116,7 @@ public class Main_UI extends Application {
 
 		buttonExitWhenLost.setPrefSize(100, 50); // set width and height of the buttonExitWhenLost
 
-		buttonExitWhenLost.setTranslateX(190); // positions button in X axes
+		buttonExitWhenLost.setTranslateX(300); // positions button in X axes
 		buttonExitWhenLost.setTranslateY(40); // positions button in Y axes
 
 		buttonExitWhenLost.setStyle("-fx-background-color: red"); // initializes button color
@@ -125,6 +130,8 @@ public class Main_UI extends Application {
 
 		VBox root = new VBox(10, f, score, buttonReturnMenu, buttonExitInGame);
 		root.setPadding(new Insets(10));
+		
+		root.setBackground(new Background(new BackgroundFill(Color.GREEN, null, null))); // set the background color
 
 		scene = new Scene(root);
 
@@ -143,15 +150,39 @@ public class Main_UI extends Application {
 					}
 
 					if (f.isDead()) {
-
+                               try {
+                            	   
 						VBox lost = new VBox(10);
-						Label finalScore = new Label("          Your final Score is : " + f.score);
+						Label finalScore = new Label("                      Your final Score is : " + f.score);
 						finalScore.setFont(Font.font("Arial", 32));
+						
+						
+						//Creating an image 
+					      
+						
+						Image image = new Image(new FileInputStream("C:\\Users\\reyth\\OneDrive\\Images\\loser.gif"));					
+						  
+					      
+					      //Setting the image view 
+					      ImageView imageView = new ImageView(image); 
+					      
+					      //Setting the position of the image 
+					      imageView.setTranslateX(145); 
+					      imageView.setTranslateY(50); 
+					      
+					      //setting the fit height and width of the image view 
+					      imageView.setFitHeight(400); 
+					      imageView.setFitWidth(500); 
+					      
+					      //Setting the preserve ratio of the image view 
+					      imageView.setPreserveRatio(true);  
+					      
+					      
 
 						lost.getChildren().addAll(finalScore, buttonRestartWhenLost, buttonBackToMenuWhenLost,
-								buttonExitWhenLost);
+								buttonExitWhenLost, imageView );
 
-						lostScene = new Scene(lost, 500, 300);
+						lostScene = new Scene(lost, 700, 700);
 
 						ps.setScene(lostScene);
 						ps.show();
@@ -193,6 +224,12 @@ public class Main_UI extends Application {
 							}
 
 						});
+						
+						} catch (FileNotFoundException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+						
 
 					}
 				}
