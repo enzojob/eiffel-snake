@@ -58,43 +58,38 @@ public class Main_UI extends Application {
 
 		// init buttonSpeed
 		buttonSpeed = new Button("SPEED"); // initializes buttonExit as a new button
-		buttonSpeed.setPrefSize(100, 30); // set width and height of the buttonExit
 		buttonSpeed.setTextFill(Color.WHITE); // set the text color in the button
 		buttonSpeed.setStyle("-fx-font: 18 arial; -fx-font-weight: bold; -fx-base: #FF8C00 ;"); // initializes button
 
 		// Initializations of buttonExit
 		buttonExit = new Button("EXIT"); // initializes buttonExit as a new button
-		buttonExit.setPrefSize(100, 30); // set width and height of the buttonExit
 		buttonExit.setTextFill(Color.WHITE); // set the text color in the button
 		buttonExit.setStyle("-fx-font: 18 arial; -fx-font-weight: bold; -fx-base: #FF4500  ;"); // initializes button
 
 		// Initializations of buttonReturnMenu
-		buttonReturnMenu = new Button("Back to Menu"); // initializes buttonReturnMenu as a new button
+		buttonReturnMenu = new Button("BACK TO MENU"); // initializes buttonReturnMenu as a new button
 		buttonReturnMenu.setTextFill(Color.WHITE);
-		buttonReturnMenu.setStyle("-fx-font-weight: bold;-fx-background-color: #2F4F4F "); // initializes button color
+		buttonReturnMenu.setStyle("-fx-font-weight: bold;-fx-base:  #FF8C00 "); // initializes button color
 
 		// Initializations of buttonExitInGame
 		buttonExitInGame = new Button("EXIT"); // initializes buttonExitInGame as a new button
 		buttonExitInGame.setTextFill(Color.WHITE);
-		buttonExitInGame.setStyle(" -fx-font-weight: bold; -fx-background-color: red ;"); // initializes button color
+		buttonExitInGame.setStyle(" -fx-font-weight: bold; -fx-base: red ;"); // initializes button color
 
 		// Initializations of buttonRestartWhenLost
-		buttonRestartWhenLost = new Button("Restart"); // initializes buttonRestartWhenLost as a new button
-		buttonRestartWhenLost.setPrefSize(100, 50); // set width and height of the buttonRestartWhenLost
+		buttonRestartWhenLost = new Button("RESTART"); // initializes buttonRestartWhenLost as a new button
 		buttonRestartWhenLost.setTextFill(Color.WHITE);
 		buttonRestartWhenLost.setStyle("-fx-font: 18 arial; -fx-font-weight: bold; -fx-base: #32CD32 ;"); // initializes
 																											// button
 																											// color
 
 		// Initializations of buttonBackToMenuWhenLost
-		buttonBackToMenuWhenLost = new Button("Back to Menu"); // initializes buttonBackToMenuWhenLost as a new button
-		buttonBackToMenuWhenLost.setPrefSize(150, 50); // set width and height of the buttonBackToMenuWhenLost
+		buttonBackToMenuWhenLost = new Button("BACK TO MENU"); // initializes buttonBackToMenuWhenLost as a new button
 		buttonBackToMenuWhenLost.setTextFill(Color.WHITE);
 		buttonBackToMenuWhenLost.setStyle("-fx-font: 18 arial; -fx-font-weight: bold; -fx-base: #FF8C00 ;"); // color
 
 		// Initializations of buttonExitWhenLost
-		buttonExitWhenLost = new Button("Exit"); // initializes buttonExitWhenLost as a new button
-		buttonExitWhenLost.setPrefSize(100, 50); // set width and height of the buttonExitWhenLost
+		buttonExitWhenLost = new Button("EXIT"); // initializes buttonExitWhenLost as a new button
 		buttonExitWhenLost.setTextFill(Color.WHITE);
 		buttonExitWhenLost.setStyle("-fx-font: 18 arial; -fx-font-weight: bold;-fx-base: #FF4500 ;");
 
@@ -106,12 +101,12 @@ public class Main_UI extends Application {
 
 		HBox buttonBox = new HBox(15);
 		buttonBox.setPadding(new Insets(15, 15, 15, 15));
-		buttonBox.setSpacing(10);
+		buttonBox.setSpacing(15);
 		buttonBox.setAlignment(Pos.BASELINE_CENTER);
 		buttonBox.getChildren().addAll(score, buttonReturnMenu, buttonExitInGame);
 		VBox root = new VBox(10, f, buttonBox);
 		root.setPadding(new Insets(10));
-		root.setBackground(new Background(new BackgroundFill(Color.GREEN, null, null))); // set the background color
+		root.setBackground(new Background(new BackgroundFill(Color.LIMEGREEN, null, null))); // set the background color
 
 		scene = new Scene(root);
 
@@ -224,7 +219,7 @@ public class Main_UI extends Application {
 			}
 		});
 
-		start.getChildren().addAll(buttonStart, buttonExit, buttonSpeed);
+		start.getChildren().addAll(buttonStart, buttonSpeed, buttonExit);
 		start.setAlignment(Pos.CENTER);
 		startScene = new Scene(start, 500, 300);
 		ps.setTitle("Snake Game");
