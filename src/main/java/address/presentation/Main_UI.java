@@ -42,7 +42,7 @@ public class Main_UI extends Application {
 	Field field;
 
 	Button buttonStart, buttonExit, buttonReturnMenu, buttonExitInGame, buttonRestartWhenLost, buttonBackToMenuWhenLost,
-			buttonExitWhenLost, buttonSpeed, buttonGif;
+	buttonExitWhenLost, buttonSpeed, buttonGif;
 
 	public void start(Stage ps) {
 
@@ -100,7 +100,7 @@ public class Main_UI extends Application {
 		Label score = new Label(" Score : 0 ");
 		score.setTextFill(Color.WHITE);
 		score.setFont(Font.font("Arial Black", 20));
-		
+
 		field = new Field(SnakeApp.getWidth(), SnakeApp.getHeight());
 		field.addSnake(new Snake(Snake.getIntitalSnakeLength(), field));
 
@@ -130,98 +130,96 @@ public class Main_UI extends Application {
 					}
 
 					if (field.isDead()) {
-						
+
 						try { 
-							
-							
-							
-					   //Creating an image 
-					   Image image;
-					    
-					   image = new Image(new FileInputStream("C:\\Users\\reyth\\eclipse-workspace\\eiffel-snake\\src\\main\\ressources\\address\\presentation\\gameover.gif"));
-					
-					  //Setting the image view 
-				      ImageView imageView = new ImageView(image); 
-				      
-				      //setting the fit height and width of the image view 
-				      imageView.setFitWidth(500); 
-				      
-				      //Setting the preserve ratio of the image view 
-				      imageView.setPreserveRatio(true); 
-				      
-				      VBox gifBox = new VBox();
-				      gifBox.setAlignment(Pos.BASELINE_CENTER);
-				      
-				      buttonGif = new Button("CONTINUE"); // initializes buttonBackToMenuWhenLost as a new button
-				      buttonGif.setTextFill(Color.WHITE);
-				      buttonGif.setStyle("-fx-font: 18 arial; -fx-font-weight: bold; -fx-base: #32CD32 ;"); // color
-				      
-				      buttonGif.setOnAction(new EventHandler<ActionEvent>() {
 
-							public void handle(ActionEvent event) {
+							//Creating an image 
+							Image image;
 
-						VBox lost = new VBox(10);
-						lost.setPadding(new Insets(10, 10, 10, 10));
-						Label finalScore = new Label("Your final Score is : " + field.score);
-						finalScore.setFont(Font.font("Arial Black", 22));
-						lost.getChildren().addAll(finalScore, buttonRestartWhenLost, buttonBackToMenuWhenLost,
-								buttonExitWhenLost);
-						lost.setAlignment(Pos.CENTER);
+							image = new Image(new FileInputStream("src/main/ressources/address/presentation/gameover.gif"));
 
-						lostScene = new Scene(lost, 500, 300);
+							//Setting the image view 
+							ImageView imageView = new ImageView(image); 
 
-						ps.setScene(lostScene);
-						ps.setResizable(false);
-						ps.show();
+							//setting the fit height and width of the image view 
+							imageView.setFitWidth(500); 
 
-						buttonRestartWhenLost.setOnAction(new EventHandler<ActionEvent>() {
-							public void handle(ActionEvent event) {
-								root.getChildren().clear();
-								field = new Field(SnakeApp.getWidth(), SnakeApp.getHeight());
-								field.addSnake(new Snake(Snake.getIntitalSnakeLength(), field));
-								score.setText("Score : 0");
-								root.getChildren().addAll(field, buttonBox);
+							//Setting the preserve ratio of the image view 
+							imageView.setPreserveRatio(true); 
 
-								ps.setResizable(false);
-								ps.setScene(scene);
-								ps.setTitle("Snake Game");
-								ps.show();
-							}
-						});
+							VBox gifBox = new VBox();
+							gifBox.setAlignment(Pos.BASELINE_CENTER);
 
-						buttonBackToMenuWhenLost.setOnAction(new EventHandler<ActionEvent>() {
-							public void handle(ActionEvent event) {
-								ps.setScene(startScene);
-								ps.show();
-							}
-						});
+							buttonGif = new Button("CONTINUE"); // initializes buttonBackToMenuWhenLost as a new button
+							buttonGif.setTextFill(Color.WHITE);
+							buttonGif.setStyle("-fx-font: 18 arial; -fx-font-weight: bold; -fx-base: #32CD32 ;"); // color
 
-						buttonExitWhenLost.setOnAction(new EventHandler<ActionEvent>() {
-							public void handle(ActionEvent event) {
-								System.exit(0);
-							}
-						});
-						
-							}
+							buttonGif.setOnAction(new EventHandler<ActionEvent>() {
 
-						});
-				      
-				       
-				      gifBox.getChildren().addAll(imageView, buttonGif); 
-				      
-				      gifBox.setBackground(new Background(new BackgroundFill(Color.BLACK, null, null))); // set the background color
+								public void handle(ActionEvent event) {
 
-				      gifScene = new Scene(gifBox, 500, 350); 
-				      
-				      ps.setScene(gifScene);
-				      ps.show();
-				      
-					} catch (FileNotFoundException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
+									VBox lost = new VBox(10);
+									lost.setPadding(new Insets(10, 10, 10, 10));
+									Label finalScore = new Label("Your final Score is : " + field.score);
+									finalScore.setFont(Font.font("Arial Black", 22));
+									lost.getChildren().addAll(finalScore, buttonRestartWhenLost, buttonBackToMenuWhenLost,
+											buttonExitWhenLost);
+									lost.setAlignment(Pos.CENTER);
+
+									lostScene = new Scene(lost, 500, 300);
+
+									ps.setScene(lostScene);
+									ps.setResizable(false);
+									ps.show();
+
+									buttonRestartWhenLost.setOnAction(new EventHandler<ActionEvent>() {
+										public void handle(ActionEvent event) {
+											root.getChildren().clear();
+											field = new Field(SnakeApp.getWidth(), SnakeApp.getHeight());
+											field.addSnake(new Snake(Snake.getIntitalSnakeLength(), field));
+											score.setText("Score : 0");
+											root.getChildren().addAll(field, buttonBox);
+
+											ps.setResizable(false);
+											ps.setScene(scene);
+											ps.setTitle("Snake Game");
+											ps.show();
+										}
+									});
+
+									buttonBackToMenuWhenLost.setOnAction(new EventHandler<ActionEvent>() {
+										public void handle(ActionEvent event) {
+											ps.setScene(startScene);
+											ps.show();
+										}
+									});
+
+									buttonExitWhenLost.setOnAction(new EventHandler<ActionEvent>() {
+										public void handle(ActionEvent event) {
+											System.exit(0);
+										}
+									});
+
+								}
+
+							});
+
+
+							gifBox.getChildren().addAll(imageView, buttonGif); 
+
+							gifBox.setBackground(new Background(new BackgroundFill(Color.BLACK, null, null))); // set the background color
+
+							gifScene = new Scene(gifBox, 500, 350); 
+
+							ps.setScene(gifScene);
+							ps.show();
+
+						} catch (FileNotFoundException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+
 					}
-							
-				      }
 				}
 			}
 		};
@@ -252,7 +250,7 @@ public class Main_UI extends Application {
 				field.addSnake(new Snake(Snake.getIntitalSnakeLength(), field));
 				score.setText("Score : 0");
 				root.getChildren().addAll(field, buttonBox);
-			
+
 				ps.setResizable(false);
 				ps.setScene(scene);
 				ps.setTitle("Snake Game");
