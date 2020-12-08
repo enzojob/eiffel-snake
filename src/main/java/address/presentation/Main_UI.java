@@ -69,12 +69,12 @@ public class Main_UI extends Application {
 		// Initializations of buttonReturnMenu
 		buttonReturnMenu = new Button("BACK TO MENU"); // initializes buttonReturnMenu as a new button
 		buttonReturnMenu.setTextFill(Color.WHITE);
-		buttonReturnMenu.setStyle("-fx-font-weight: bold;-fx-base:  #FF8C00 "); // initializes button color
+		buttonReturnMenu.setStyle("-fx-font: 18 arial; -fx-font-weight: bold;-fx-base:  #FF8C00 "); // initializes button color
 
 		// Initializations of buttonExitInGame
 		buttonExitInGame = new Button("EXIT"); // initializes buttonExitInGame as a new button
 		buttonExitInGame.setTextFill(Color.WHITE);
-		buttonExitInGame.setStyle(" -fx-font-weight: bold; -fx-base: red ;"); // initializes button color
+		buttonExitInGame.setStyle("-fx-font: 18 arial; -fx-font-weight: bold; -fx-base: red ;"); // initializes button color
 
 		// Initializations of buttonRestartWhenLost
 		buttonRestartWhenLost = new Button("RESTART"); // initializes buttonRestartWhenLost as a new button
@@ -89,11 +89,11 @@ public class Main_UI extends Application {
 		// Initializations of buttonExitWhenLost
 		buttonExitWhenLost = new Button("EXIT"); // initializes buttonExitWhenLost as a new button
 		buttonExitWhenLost.setTextFill(Color.WHITE);
-		buttonExitWhenLost.setStyle("-fx-font: 18 arial; -fx-font-weight: bold;-fx-base: #FF4500 ;");
+		buttonExitWhenLost.setStyle("-fx-font: 18 arial; -fx-font-weight: bold; -fx-base: #FF4500 ;");
 
 		Label score = new Label(" Score : 0 ");
 		score.setTextFill(Color.WHITE);
-		score.setFont(Font.font("Arial Black", 22));
+		score.setFont(Font.font("Arial Black", 18));
 		
 		field = new Field(SnakeApp.getWidth(), SnakeApp.getHeight());
 		field.addSnake(new Snake(Snake.getIntitalSnakeLength(), field));
@@ -129,7 +129,6 @@ public class Main_UI extends Application {
 						lost.setPadding(new Insets(15, 15, 15, 15));
 						Label finalScore = new Label("Your final Score is : " + field.score);
 						finalScore.setFont(Font.font("Arial Black", 24));
-
 						lost.getChildren().addAll(finalScore, buttonRestartWhenLost, buttonBackToMenuWhenLost,
 								buttonExitWhenLost);
 						lost.setAlignment(Pos.CENTER);
