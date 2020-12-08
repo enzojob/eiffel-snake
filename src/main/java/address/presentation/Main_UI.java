@@ -1,5 +1,8 @@
 package address.presentation;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
 import address.SnakeApp;
 import address.model.Snake;
 import javafx.animation.AnimationTimer;
@@ -12,6 +15,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.effect.DropShadow;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Background;
@@ -33,11 +38,11 @@ public class Main_UI extends Application {
 	static int speedFactor = 8;
 	static int speedCounter = 0;
 
-	Scene startScene, scene, stopScene, lostScene;
+	Scene startScene, scene, stopScene, lostScene, gifScene;
 	Field field;
 
 	Button buttonStart, buttonExit, buttonReturnMenu, buttonExitInGame, buttonRestartWhenLost, buttonBackToMenuWhenLost,
-			buttonExitWhenLost, buttonSpeed;
+			buttonExitWhenLost, buttonSpeed, buttonGif;
 
 	public void start(Stage ps) {
 
@@ -125,6 +130,35 @@ public class Main_UI extends Application {
 					}
 
 					if (field.isDead()) {
+						
+						try { 
+							
+							
+							
+					   //Creating an image 
+					   Image image;
+					    
+					   image = new Image(new FileInputStream("C:\\Users\\reyth\\eclipse-workspace\\eiffel-snake\\src\\main\\ressources\\address\\presentation\\gameover.gif"));
+					
+					  //Setting the image view 
+				      ImageView imageView = new ImageView(image); 
+				      
+				      //setting the fit height and width of the image view 
+				      imageView.setFitWidth(500); 
+				      
+				      //Setting the preserve ratio of the image view 
+				      imageView.setPreserveRatio(true); 
+				      
+				      VBox gifBox = new VBox();
+				      gifBox.setAlignment(Pos.BASELINE_CENTER);
+				      
+				      buttonGif = new Button("CONTINUE"); // initializes buttonBackToMenuWhenLost as a new button
+				      buttonGif.setTextFill(Color.WHITE);
+				      buttonGif.setStyle("-fx-font: 18 arial; -fx-font-weight: bold; -fx-base: #32CD32 ;"); // color
+				      
+				      buttonGif.setOnAction(new EventHandler<ActionEvent>() {
+
+							public void handle(ActionEvent event) {
 
 						VBox lost = new VBox(10);
 						lost.setPadding(new Insets(10, 10, 10, 10));
@@ -167,7 +201,27 @@ public class Main_UI extends Application {
 								System.exit(0);
 							}
 						});
+						
+							}
+
+						});
+				      
+				       
+				      gifBox.getChildren().addAll(imageView, buttonGif); 
+				      
+				      gifBox.setBackground(new Background(new BackgroundFill(Color.BLACK, null, null))); // set the background color
+
+				      gifScene = new Scene(gifBox, 500, 350); 
+				      
+				      ps.setScene(gifScene);
+				      ps.show();
+				      
+					} catch (FileNotFoundException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
 					}
+							
+				      }
 				}
 			}
 		};
