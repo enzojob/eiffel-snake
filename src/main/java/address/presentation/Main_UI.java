@@ -21,6 +21,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class Main_UI extends Application {
 
@@ -93,7 +94,7 @@ public class Main_UI extends Application {
 
 		Label score = new Label(" Score : 0 ");
 		score.setTextFill(Color.WHITE);
-		score.setFont(Font.font("Arial Black", 18));
+		score.setFont(Font.font("Arial Black", 20));
 		
 		field = new Field(SnakeApp.getWidth(), SnakeApp.getHeight());
 		field.addSnake(new Snake(Snake.getIntitalSnakeLength(), field));
@@ -125,10 +126,10 @@ public class Main_UI extends Application {
 
 					if (field.isDead()) {
 
-						VBox lost = new VBox(15);
-						lost.setPadding(new Insets(15, 15, 15, 15));
+						VBox lost = new VBox(10);
+						lost.setPadding(new Insets(10, 10, 10, 10));
 						Label finalScore = new Label("Your final Score is : " + field.score);
-						finalScore.setFont(Font.font("Arial Black", 24));
+						finalScore.setFont(Font.font("Arial Black", 22));
 						lost.getChildren().addAll(finalScore, buttonRestartWhenLost, buttonBackToMenuWhenLost,
 								buttonExitWhenLost);
 						lost.setAlignment(Pos.CENTER);
@@ -136,6 +137,7 @@ public class Main_UI extends Application {
 						lostScene = new Scene(lost, 500, 300);
 
 						ps.setScene(lostScene);
+						ps.setResizable(false);
 						ps.show();
 
 						buttonRestartWhenLost.setOnAction(new EventHandler<ActionEvent>() {
@@ -196,7 +198,7 @@ public class Main_UI extends Application {
 				field.addSnake(new Snake(Snake.getIntitalSnakeLength(), field));
 				score.setText("Score : 0");
 				root.getChildren().addAll(field, buttonBox);
-
+			
 				ps.setResizable(false);
 				ps.setScene(scene);
 				ps.setTitle("Snake Game");
@@ -216,6 +218,7 @@ public class Main_UI extends Application {
 		start.getChildren().addAll(buttonStart, buttonSpeed, buttonExit);
 		start.setAlignment(Pos.CENTER);
 		startScene = new Scene(start, 500, 300);
+		ps.initStyle(StageStyle.DECORATED);
 		ps.setTitle("Snake Game");
 		ps.setScene(startScene);
 		ps.show();
