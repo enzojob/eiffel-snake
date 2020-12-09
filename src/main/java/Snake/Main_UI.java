@@ -9,6 +9,8 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -20,6 +22,9 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+
+
+
 
 public class Main_UI extends Application {
 
@@ -120,7 +125,8 @@ public class Main_UI extends Application {
 		buttonExitWhenLost.setTranslateY(40); // positions button in Y axes
 
 		buttonExitWhenLost.setStyle("-fx-background-color: red"); // initializes button color
-
+		
+		
 		Label score = new Label(" Score : 0 ");
 		score.setFont(Font.font("Arial", 32));
 
