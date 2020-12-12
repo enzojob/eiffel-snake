@@ -9,7 +9,6 @@
 	<artifactId>eiffel-snake</artifactId>
 	<version>1.0-SNAPSHOT</version>
 
-
 	<name>testing-junit-3-4-5</name>
 	<!-- FIXME change it to the project's website -->
 	<url>http://www.example.com</url>
@@ -18,7 +17,6 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<maven.compiler.source>1.8</maven.compiler.source>
-		<maven.compiler.release>1.8</maven.compiler.release>
 		<javafx.version>15</javafx.version>
 		<junit.version>4.13</junit.version>
 		<junit.jupiter.version>5.5.2</junit.jupiter.version>
