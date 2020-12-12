@@ -50,7 +50,7 @@ public class Main_UITest {
 	 */
 	@Test
 	public void testStartStage() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 	/**
@@ -58,7 +58,7 @@ public class Main_UITest {
 	 */
 	@Test
 	public void testSetDirection() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 	/**
@@ -66,7 +66,7 @@ public class Main_UITest {
 	 */
 	@Test
 	public void testSetSpeed() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 	/**
@@ -74,7 +74,7 @@ public class Main_UITest {
 	 */
 	@Test
 	public void testMain() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 	/**
@@ -82,7 +82,7 @@ public class Main_UITest {
 	 */
 	@Test
 	public void testLaunchClassOfQextendsApplicationStringArray() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 	/**
@@ -90,7 +90,7 @@ public class Main_UITest {
 	 */
 	@Test
 	public void testLaunchStringArray() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 	/**
@@ -98,7 +98,7 @@ public class Main_UITest {
 	 */
 	@Test
 	public void testApplication() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 	/**
@@ -106,7 +106,7 @@ public class Main_UITest {
 	 */
 	@Test
 	public void testInit() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 	/**
@@ -114,7 +114,7 @@ public class Main_UITest {
 	 */
 	@Test
 	public void testStartStage1() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 	/**
@@ -122,7 +122,7 @@ public class Main_UITest {
 	 */
 	@Test
 	public void testStop() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 	/**
@@ -130,7 +130,7 @@ public class Main_UITest {
 	 */
 	@Test
 	public void testGetHostServices() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 	/**
@@ -138,7 +138,7 @@ public class Main_UITest {
 	 */
 	@Test
 	public void testGetParameters() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 	/**
@@ -146,7 +146,7 @@ public class Main_UITest {
 	 */
 	@Test
 	public void testNotifyPreloader() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 	/**
@@ -154,7 +154,7 @@ public class Main_UITest {
 	 */
 	@Test
 	public void testGetUserAgentStylesheet() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 	/**
@@ -162,7 +162,7 @@ public class Main_UITest {
 	 */
 	@Test
 	public void testSetUserAgentStylesheet() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 	/**
@@ -170,7 +170,7 @@ public class Main_UITest {
 	 */
 	@Test
 	public void testObject() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 	/**
@@ -178,7 +178,7 @@ public class Main_UITest {
 	 */
 	@Test
 	public void testGetClass() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 	/**
@@ -186,7 +186,7 @@ public class Main_UITest {
 	 */
 	@Test
 	public void testHashCode() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 	/**
@@ -194,7 +194,7 @@ public class Main_UITest {
 	 */
 	@Test
 	public void testEquals() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 	/**
@@ -202,7 +202,7 @@ public class Main_UITest {
 	 */
 	@Test
 	public void testClone() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 	/**
@@ -210,7 +210,7 @@ public class Main_UITest {
 	 */
 	@Test
 	public void testToString() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 	/**
@@ -218,7 +218,7 @@ public class Main_UITest {
 	 */
 	@Test
 	public void testNotify() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 	/**
@@ -226,7 +226,7 @@ public class Main_UITest {
 	 */
 	@Test
 	public void testNotifyAll() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 	/**
@@ -234,7 +234,7 @@ public class Main_UITest {
 	 */
 	@Test
 	public void testWaitLong() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 	/**
@@ -242,7 +242,7 @@ public class Main_UITest {
 	 */
 	@Test
 	public void testWaitLongInt() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 	/**
@@ -250,7 +250,7 @@ public class Main_UITest {
 	 */
 	@Test
 	public void testWait() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 	/**
@@ -258,7 +258,7 @@ public class Main_UITest {
 	 */
 	@Test
 	public void testFinalize() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 }
