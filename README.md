@@ -34,16 +34,7 @@ The game doesn't need an internet connection and can be played alone.
 It is a great idea to spend some fun time and to sharpen your reflexes.
 
 ### Goal
-+ Make sure that you have installed a Java Runtime Environment on your computer.
-+ Download the file from our repository in Github.
-+ Unzip the downloaded file to the desired destination folder.
-+ Copy the path of the desired version file (.jar) to the clipboard.
-+ Open the console of your computer.
-+ Enter java -jar followed by the copied path (.jar).
-
-		Example: java -jar C:\Users\ejob\Downloads\eiifel-snake-2.0-SNAPSHOT.jar		
-+ Confirm your entry with Enter, the game should start.
-+ Have Fun!
+The aim is to combine the skills and competencies learned in programming and software engineering within a single project. For development we're using the SCRUM framework. We are planning on two sprints for this project.
 
 ### Conditions
 * The game should be programmed with JAVA
@@ -54,9 +45,16 @@ It is a great idea to spend some fun time and to sharpen your reflexes.
 * The program should be able to be executed using a specially created JAR file and the command java-jar xxxxx.jar.
 
 ## Build instructions
-* Laden Sie die Datei .jar auf ihren Computer runter.
-* Vergewissern Sie sich, dass Sie eine Java Runtime Environment auf Ihrem Computer installiert haben.
-* Klicken Sie (Doppelklick) auf ebenjene, um die Datei auszuführen.
++ Make sure that you have installed a Java Runtime Environment on your computer.
++ Download the file from our repository in Github.
++ Unzip the downloaded file to the desired destination folder.
++ Copy the path of the desired version file (.jar) to the clipboard.
++ Open the console of your computer.
++ Enter java -jar followed by the copied path (.jar).
+
+		Example: java -jar C:\Users\ejob\Downloads\eiifel-snake-2.0-SNAPSHOT.jar		
++ Confirm your entry with Enter, the game should start.
++ Have Fun!
 
 ## Operating manual
 Here is a short introduction to our game: 
