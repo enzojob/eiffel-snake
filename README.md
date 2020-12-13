@@ -25,9 +25,9 @@ Members: Enzo Job, Michiel Kindt, Théo Rey
 1. [Test cases](#test-cases)
 
 ## Prelude
-Welcome to our project "SNAKEIFFEL" ! The project consists of our own interpretation of the well known and often copied game "SNAKE".
-The player controls the snake on by changing directions on the playfield.
-The goal of the game lies in collecting points by eating Apples, without letting the snake eat his own Tail.
+Welcome to our project "SNAKEIFFEL" - The project consists of our own making of the well known and often played game "SNAKE".
+The player controls the snake by changing directions on the playfield.
+The goal of the game is to collect points by eating Apples, without letting the snake eat his own Tail.
 The game doesn't need an internet connection and can be played alone.
 It is a great idea to spend some fun time and to sharpen your reflexes.
 
@@ -43,7 +43,7 @@ The aim is to combine the skills and competencies learned in programming and sof
 * The program should be able to be executed using a specially created JAR file and the command java-jar xxxxx.jar.
 
 ## Build instructions
-* Make sure that you have installed a Java Runtime Environment on your computer.
+* Make sure that you are running the JDK8 environment on your computer.
 * Download the file from our repository in Github.
 * Unzip the downloaded file to the desired destination folder.
 * Copy the path of the desired version file (.jar) to the clipboard.
@@ -63,7 +63,7 @@ Here is a short introduction to our game:
 * The goal is to eat as many apples as possible to make the snake grow  
 * Each apple eaten gives 20 points 
 * You can return to the menu or exit the game at any time 
-* When you bump into yourself you will die
+* When you bump into yourself you die
 
 ![end](https://user-images.githubusercontent.com/73689853/102016250-4349d900-3d60-11eb-94c6-0e31b82b5a2e.PNG)
 
@@ -108,9 +108,9 @@ Here is a short introduction to our game:
 | 13 | Prevent forbidden movements | 8 | 2 Stunden |
 
 ### Important code snippets
-In this section we want to discuss in depth the code that permits to create an apple at a random location in the field.
+In this section we want to deeper discuss the code that permits to create an apple at a random location in the field.
 To do this we will first look into the Constructor "Food" and explain how it works. 
-The constructor is then called with addFood() each time we need to place another Apple.
+The constructor is later called with addFood() each time we need to place another Apple.
 #### Food() in Food.java
 The constructor takes the x and y values and mutiplies them by the BlockSize to calculate the position of the object Food.
 In same time it changes the color of the Apple randomly every time the constructor is called and the border is set to black.
@@ -181,14 +181,14 @@ This results in the impression that the snake moves at different speeds.
      AnimationTimer timer = new AnimationTimer() {
          public void handle(long now) {
 
-             if (now - then > 1000000000 / speedFactor) { // vitesse a laquelle l'affichage est mis a jours
+             if (now - then > 1000000000 / speedFactor) { // refresh speed
                  field.update();
                  then = now;
                  score.setText("Score: " + field.score);
                  changed = false;
 	
 We also wanted to talk about another important code snippet regarding the display of the "Game Over" gif.
-We used InputStrem to call the gameover.gif file belonging to ressources. We than created an object image of type Image and displayed it on the screen.
+We used InputStream to call the gameover.gif file belonging to ressources. We then created an object image of type Image and displayed it on the screen.
 		    
 	InputStream inputStream = getClass().getResourceAsStream("/gameover.gif");
         Image image = new Image(inputStream);
