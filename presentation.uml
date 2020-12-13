@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>address.presentation</OriginalElement>
+  <nodes>
+    <node x="155.16666666666663" y="0.0">address.presentation.Block</node>
+    <node x="4.166666666666657" y="44.0">address.presentation.Food</node>
+    <node x="88.56666666666663" y="223.0">address.presentation.Field</node>
+    <node x="108.52499999999998" y="502.0">address.presentation.Main_UI</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="address.presentation.Field" target="address.presentation.Block">
+      <point x="0.0" y="-114.5" />
+      <point x="183.06666666666663" y="203.0" />
+      <point x="173.46666666666664" y="203.0" />
+      <point x="-73.19999999999999" y="81.5" />
+    </edge>
+    <edge source="address.presentation.Main_UI" target="address.presentation.Field">
+      <point x="-75.33333333333331" y="-59.5" />
+      <point x="146.19166666666666" y="477.0" />
+      <point x="135.81666666666663" y="477.0" />
+      <point x="-47.25" y="114.5" />
+    </edge>
+    <edge source="address.presentation.Block" target="address.presentation.Field">
+      <point x="36.59999999999996" y="81.5" />
+      <point x="283.2666666666666" y="193.0" />
+      <point x="264.0666666666666" y="193.0" />
+      <point x="81.0" y="-114.5" />
+    </edge>
+    <edge source="address.presentation.Main_UI" target="address.presentation.Block">
+      <point x="75.33333333333331" y="-59.5" />
+      <point x="296.8583333333333" y="477.0" />
+      <point x="288.0666666666666" y="477.0" />
+      <point x="288.0666666666666" y="203.0" />
+      <point x="319.86666666666656" y="203.0" />
+      <point x="73.19999999999993" y="81.5" />
+    </edge>
+    <edge source="address.presentation.Field" target="address.presentation.Food">
+      <point x="-81.0" y="-114.5" />
+      <point x="102.06666666666663" y="203.0" />
+      <point x="26.0" y="203.0" />
+      <point x="-43.666666666666664" y="37.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.9" x="137.0" y="276.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>address</OriginalElement>
+  <nodes>
+    <node x="290.8415842490843" y="711.0">address.SnakeApp</node>
+    <node x="107.23081043956043" y="0.0">address.presentation.Block</node>
+    <node x="204.2165842490843" y="964.0">address.model.Snake</node>
+    <node x="405.6040842490843" y="44.0">address.presentation.Food</node>
+    <node x="305.5" y="243.0">address.presentation.Field</node>
+    <node x="58.50000000000003" y="532.0">address.presentation.Main_UI</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="address.presentation.Main_UI" target="address.presentation.Field">
+      <point x="0.0" y="-59.5" />
+      <point x="171.50000000000003" y="502.0" />
+      <point x="316.0" y="502.0" />
+      <point x="-84.0" y="114.5" />
+    </edge>
+    <edge source="address.model.Snake" target="address.SnakeApp">
+      <point x="0.0" y="-48.5" />
+      <point x="-62.625" y="81.5" />
+    </edge>
+    <edge source="address.SnakeApp" target="address.presentation.Field">
+      <point x="52.1875" y="-81.5" />
+      <point x="426.5290842490843" y="691.0" />
+      <point x="414.9890613553114" y="691.0" />
+      <point x="414.9890613553114" y="512.0" />
+      <point x="421.0" y="512.0" />
+      <point x="21.0" y="114.5" />
+    </edge>
+    <edge source="address.presentation.Block" target="address.SnakeApp">
+      <point x="9.150000000000034" y="81.5" />
+      <point x="207.88081043956046" y="223.0" />
+      <point x="295.0" y="223.0" />
+      <point x="295.0" y="671.0" />
+      <point x="343.0290842490843" y="671.0" />
+      <point x="-31.3125" y="-81.5" />
+    </edge>
+    <edge source="address.presentation.Field" target="address.presentation.Food">
+      <point x="27.0" y="-114.5" />
+      <point x="427.0" y="223.0" />
+      <point x="421.9790842490843" y="223.0" />
+      <point x="-49.125" y="37.5" />
+    </edge>
+    <edge source="address.model.Snake" target="address.presentation.Field">
+      <point x="66.15384615384619" y="-48.5" />
+      <point x="377.8704304029305" y="924.0" />
+      <point x="529.9251327838829" y="924.0" />
+      <point x="529.9251327838829" y="512.0" />
+      <point x="442.0" y="512.0" />
+      <point x="42.0" y="114.5" />
+    </edge>
+    <edge source="address.model.Snake" target="address.presentation.Block">
+      <point x="-49.615384615384585" y="-48.5" />
+      <point x="262.1011996336997" y="914.0" />
+      <point x="48.00000000000003" y="914.0" />
+      <point x="48.00000000000003" y="213.0" />
+      <point x="171.28081043956044" y="213.0" />
+      <point x="-27.44999999999999" y="81.5" />
+    </edge>
+    <edge source="address.presentation.Field" target="address.model.Snake">
+      <point x="84.0" y="114.5" />
+      <point x="484.0" y="492.0" />
+      <point x="551.9251327838829" y="492.0" />
+      <point x="551.9251327838829" y="944.0" />
+      <point x="410.9473534798535" y="944.0" />
+      <point x="99.23076923076923" y="-48.5" />
+    </edge>
+    <edge source="address.presentation.Food" target="address.SnakeApp">
+      <point x="49.12500000000003" y="37.5" />
+      <point x="520.2290842490843" y="223.0" />
+      <point x="518.9251327838829" y="223.0" />
+      <point x="518.9251327838829" y="691.0" />
+      <point x="447.4040842490843" y="691.0" />
+      <point x="73.0625" y="-81.5" />
+    </edge>
+    <edge source="address.presentation.Field" target="address.presentation.Block">
+      <point x="-81.0" y="-114.5" />
+      <point x="319.0" y="213.0" />
+      <point x="226.18081043956047" y="213.0" />
+      <point x="27.450000000000045" y="81.5" />
+    </edge>
+    <edge source="address.SnakeApp" target="address.model.Snake">
+      <point x="-20.875" y="81.5" />
+      <point x="353.4665842490843" y="894.0" />
+      <point x="328.25504578754584" y="894.0" />
+      <point x="16.538461538461547" y="-48.5" />
+    </edge>
+    <edge source="address.SnakeApp" target="address.presentation.Main_UI">
+      <point x="-73.0625" y="-81.5" />
+      <point x="301.2790842490843" y="691.0" />
+      <point x="199.75000000000003" y="691.0" />
+      <point x="28.25" y="59.5" />
+    </edge>
+    <edge source="address.presentation.Main_UI" target="address.model.Snake">
+      <point x="-84.75" y="59.5" />
+      <point x="86.75000000000003" y="691.0" />
+      <point x="105.34158424908429" y="691.0" />
+      <point x="105.34158424908429" y="904.0" />
+      <point x="278.63966117216125" y="904.0" />
+      <point x="-33.07692307692304" y="-48.5" />
+    </edge>
+    <edge source="address.presentation.Main_UI" target="address.SnakeApp">
+      <point x="84.75" y="59.5" />
+      <point x="256.25" y="681.0" />
+      <point x="322.1540842490843" y="681.0" />
+      <point x="-52.1875" y="-81.5" />
+    </edge>
+    <edge source="address.presentation.Block" target="address.presentation.Field">
+      <point x="82.35000000000008" y="81.5" />
+      <point x="281.08081043956054" y="183.0" />
+      <point x="400.0" y="183.0" />
+      <point x="0.0" y="-114.5" />
+    </edge>
+    <edge source="address.presentation.Main_UI" target="address.presentation.Block">
+      <point x="-75.33333333333331" y="-59.5" />
+      <point x="96.16666666666671" y="512.0" />
+      <point x="99.3141437728938" y="512.0" />
+      <point x="99.3141437728938" y="223.0" />
+      <point x="189.58081043956045" y="223.0" />
+      <point x="-9.149999999999977" y="81.5" />
+    </edge>
+    <edge source="address.presentation.Field" target="address.SnakeApp">
+      <point x="0.0" y="114.5" />
+      <point x="400.0" y="512.0" />
+      <point x="390.8415842490843" y="512.0" />
+      <point x="390.8415842490843" y="691.0" />
+      <point x="405.6540842490843" y="691.0" />
+      <point x="31.3125" y="-81.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="220.0" y="752.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
