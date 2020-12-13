@@ -189,6 +189,18 @@ We used InputStrem to call the gameover.gif file belonging to ressources. We tha
 
         //Setting the image view
         ImageView imageView = new ImageView(image);
+	
+## Diagramm
+### Package Diagramm 
+![packageDiagramm](https://user-images.githubusercontent.com/73689853/102015263-bcdec880-3d5a-11eb-963d-0a9c28907eac.PNG)
+
+### Class Diagramm 
+![classDiagramm](https://user-images.githubusercontent.com/73689853/102015294-f1eb1b00-3d5a-11eb-8f48-47fab0e2a428.PNG)
+
+### Sequence Diagramm
+
+
+
 
 ## Test cases
 | Test Case # | Description | Test Data | Expected Result | Actual Result | Pass/Fail |
@@ -204,7 +216,6 @@ We used InputStrem to call the gameover.gif file belonging to ressources. We tha
 | 9 | Can you adjust the difficulty of the game? | Clicking on the different difficulty buttons | The speed of the snake can be changed in the Menu to set the difficulty of the game| As expected | Pass |
 | 10 | Is the endscore shown on the screen? | Game Over | The Endscore is shown on the screen at Game Over| As expected | Pass |
 
-![packageDiagramm](https://user-images.githubusercontent.com/73689853/102015263-bcdec880-3d5a-11eb-963d-0a9c28907eac.PNG)
 
-![classDiagramm](https://user-images.githubusercontent.com/73689853/102015294-f1eb1b00-3d5a-11eb-8f48-47fab0e2a428.PNG)
+
 
