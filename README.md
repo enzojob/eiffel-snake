@@ -57,8 +57,10 @@ The aim is to combine the skills and competencies learned in programming and sof
 + Have Fun!
 
 ## Operating manual
+![start](https://user-images.githubusercontent.com/73689853/102016019-1648f680-3d5f-11eb-8e07-6ce4313c0534.PNG)
 Here is a short introduction to our game: 
-* After starting the game, a start interface will appear with different buttons: START, EXIT....
+* After starting the game, a start interface will appear with different buttons: START, EXIT, SPEED
+* You can choose between three level of speed: EASY, MEDIUM, HARD 
 * The goal is to eat as many apples as possible to make the snake grow  
 * Each apple eaten gives 20 points 
 * When you bump into yourself you will die 
