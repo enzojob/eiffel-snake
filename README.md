@@ -35,7 +35,7 @@ It is a great idea to spend some fun time and to sharpen your reflexes.
 + Open the console of your computer.
 + Enter java -jar followed by the copied path (.jar).
 
-		Example: java -jar C:\Users\Hans Zimmer\Downloads\trinat\moorhuhn.jar		
+		Example: java -jar C:\Users\ejob\Downloads\eiifel-snake-2.0-SNAPSHOT.jar		
 + Confirm your entry with Enter, the game should start.
 + Have Fun!
 
