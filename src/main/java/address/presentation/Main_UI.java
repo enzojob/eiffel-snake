@@ -1,14 +1,9 @@
 package address.presentation;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-
 import address.SnakeApp;
 import address.model.Snake;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -27,6 +22,8 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+
+import java.io.InputStream;
 
 public class Main_UI extends Application {
 
@@ -129,9 +126,9 @@ public class Main_UI extends Application {
                         try {
 
                             //Creating an image
-                            Image image;
 
-                            image = new Image(new FileInputStream("src/main/ressources/address/presentation/gameover.gif"));
+                            InputStream inputStream = getClass().getResourceAsStream("/gameover.gif");
+                            Image image = new Image(inputStream);
 
                             //Setting the image view
                             ImageView imageView = new ImageView(image);
@@ -197,7 +194,7 @@ public class Main_UI extends Application {
                             ps.setScene(gifScene);
                             ps.show();
 
-                        } catch (FileNotFoundException e) {
+                        } catch (Exception e) {
                             e.printStackTrace();
                         }
 
