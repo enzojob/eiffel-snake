@@ -18,6 +18,10 @@ Members: Enzo Job, Michiel Kindt, Théo Rey
 1. [Documentation - Sprint 2](#dokumentation-sprint-2)
     + [Tasklist - Sprint 2](#tasklist)
     + [Important code snippets - Sprint 2](#important-code-snippets)
+1. [Diagramm](#diagramm) 
+    + [Package diagramm](#package-diagramm)
+    + [Class diagramm](#class-diagramm)
+    + [Sequence diagramm](#sequence-diagramm)
 1. [Test cases](#test-cases)
 
 ## Prelude
@@ -194,13 +198,13 @@ We used InputStrem to call the gameover.gif file belonging to ressources. We tha
 ![Gif](https://user-images.githubusercontent.com/73689853/102015309-1e9f3280-3d5b-11eb-9609-02f6ddd5d69f.PNG)	
 	
 ## Diagramm
-### Package Diagramm 
+### Package diagramm 
 ![packageDiagramm](https://user-images.githubusercontent.com/73689853/102015263-bcdec880-3d5a-11eb-963d-0a9c28907eac.PNG)
 
-### Class Diagramm 
+### Class diagramm 
 ![classDiagramm](https://user-images.githubusercontent.com/73689853/102015294-f1eb1b00-3d5a-11eb-8f48-47fab0e2a428.PNG)
 
-### Sequence Diagramm
+### Sequence diagramm
 ![mainAppSeqDiagramm](https://user-images.githubusercontent.com/73689853/102015399-b3a22b80-3d5b-11eb-8efc-366877c61db1.png)
 
 ## Test cases
