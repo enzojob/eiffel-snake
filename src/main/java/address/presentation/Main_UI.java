@@ -27,17 +27,15 @@ import java.io.InputStream;
 
 public class Main_UI extends Application {
 
-    long then = System.nanoTime();
+    long then = System.nanoTime(); // global time variable for frames
     boolean changed = false;
     int nextUpdate;
     boolean hasNext = false;
-
     static int speedFactor = 8;
     static int speedCounter = 0;
 
     Scene startScene, scene, lostScene, gifScene;
     Field field;
-
     Button buttonStart, buttonExit, buttonReturnMenu, buttonExitInGame, buttonRestartWhenLost, buttonBackToMenuWhenLost,
             buttonExitWhenLost, buttonSpeed, buttonGif;
 
@@ -46,71 +44,83 @@ public class Main_UI extends Application {
         VBox start = new VBox(15);
         start.setBackground(new Background(new BackgroundFill(Color.WHITE, null, null))); // set the background color
 
-        // Initializations of buttonStart
+        // init of buttonStart
         buttonStart = new Button("START"); // initializes buttonStart as a new button
         buttonStart.setPrefSize(250, 100); // set width and height of the buttonStart
         buttonStart.setTextFill(Color.WHITE); // set the text color in the button
-        buttonStart.setStyle("-fx-font: 22 arial; -fx-font-weight: bold; -fx-base: #32CD32 ;"); // initializes button
+        buttonStart.setStyle("-fx-font: 22 arial; -fx-font-weight: bold; -fx-base: #32CD32 ;"); // CSS
         DropShadow shadow = new DropShadow();
-        buttonStart.addEventHandler(MouseEvent.MOUSE_ENTERED, e -> buttonStart.setEffect(shadow));
+        buttonStart.addEventHandler(MouseEvent.MOUSE_ENTERED, e -> {
+            buttonStart.setEffect(shadow); // shadow effect at mouse hover
+        });
 
+        /*
+         * Initialization of the other buttons:
+         * - init button with text
+         * - text color
+         * - CSS styling
+         * */
         // init buttonSpeed
-        buttonSpeed = new Button("SPEED"); // initializes buttonExit as a new button
-        buttonSpeed.setTextFill(Color.WHITE); // set the text color in the button
-        buttonSpeed.setStyle("-fx-font: 18 arial; -fx-font-weight: bold; -fx-base: #FF8C00 ;"); // initializes button
+        buttonSpeed = new Button("SPEED");
+        buttonSpeed.setTextFill(Color.WHITE);
+        buttonSpeed.setStyle("-fx-font: 18 arial; -fx-font-weight: bold; -fx-base: #FF8C00 ;");
 
-        // Initializations of buttonExit
-        buttonExit = new Button("EXIT"); // initializes buttonExit as a new button
-        buttonExit.setTextFill(Color.WHITE); // set the text color in the button
-        buttonExit.setStyle("-fx-font: 18 arial; -fx-font-weight: bold; -fx-base: #FF4500  ;"); // initializes button
+        // init buttonExit
+        buttonExit = new Button("EXIT");
+        buttonExit.setTextFill(Color.WHITE);
+        buttonExit.setStyle("-fx-font: 18 arial; -fx-font-weight: bold; -fx-base: #FF4500  ;");
 
-        // Initializations of buttonReturnMenu
-        buttonReturnMenu = new Button("BACK TO MENU"); // initializes buttonReturnMenu as a new button
+        // init buttonReturnMenu
+        buttonReturnMenu = new Button("BACK TO MENU");
         buttonReturnMenu.setTextFill(Color.WHITE);
-        buttonReturnMenu.setStyle("-fx-font: 18 arial; -fx-font-weight: bold;-fx-base:  #FF8C00 "); // initializes button color
+        buttonReturnMenu.setStyle("-fx-font: 18 arial; -fx-font-weight: bold;-fx-base:  #FF8C00 ");
 
-        // Initializations of buttonExitInGame
-        buttonExitInGame = new Button("EXIT"); // initializes buttonExitInGame as a new button
+        // init buttonExitInGame
+        buttonExitInGame = new Button("EXIT");
         buttonExitInGame.setTextFill(Color.WHITE);
-        buttonExitInGame.setStyle("-fx-font: 18 arial; -fx-font-weight: bold; -fx-base: red ;"); // initializes button color
+        buttonExitInGame.setStyle("-fx-font: 18 arial; -fx-font-weight: bold; -fx-base: #FF4500 ;");
 
-        // Initializations of buttonRestartWhenLost
-        buttonRestartWhenLost = new Button("RESTART"); // initializes buttonRestartWhenLost as a new button
+        // init buttonRestartWhenLost
+        buttonRestartWhenLost = new Button("RESTART");
         buttonRestartWhenLost.setTextFill(Color.WHITE);
-        buttonRestartWhenLost.setStyle("-fx-font: 18 arial; -fx-font-weight: bold; -fx-base: #32CD32 ;"); // initializes button color
+        buttonRestartWhenLost.setStyle("-fx-font: 18 arial; -fx-font-weight: bold; -fx-base: #32CD32 ;");
 
-        // Initializations of buttonBackToMenuWhenLost
-        buttonBackToMenuWhenLost = new Button("BACK TO MENU"); // initializes buttonBackToMenuWhenLost as a new button
+        // init buttonBackToMenuWhenLost
+        buttonBackToMenuWhenLost = new Button("BACK TO MENU");
         buttonBackToMenuWhenLost.setTextFill(Color.WHITE);
-        buttonBackToMenuWhenLost.setStyle("-fx-font: 18 arial; -fx-font-weight: bold; -fx-base: #FF8C00 ;"); // color
+        buttonBackToMenuWhenLost.setStyle("-fx-font: 18 arial; -fx-font-weight: bold; -fx-base: #FF8C00 ;");
 
-        // Initializations of buttonExitWhenLost
-        buttonExitWhenLost = new Button("EXIT"); // initializes buttonExitWhenLost as a new button
+        // init buttonExitWhenLost
+        buttonExitWhenLost = new Button("EXIT");
         buttonExitWhenLost.setTextFill(Color.WHITE);
         buttonExitWhenLost.setStyle("-fx-font: 18 arial; -fx-font-weight: bold; -fx-base: #FF4500 ;");
 
+        // init buttonGif
+        buttonGif = new Button("CONTINUE");
+        buttonGif.setTextFill(Color.WHITE);
+        buttonGif.setStyle("-fx-font: 18 arial; -fx-font-weight: bold; -fx-base: #32CD32 ;");
+
+        // init score Label
         Label score = new Label(" Score : 0 ");
         score.setTextFill(Color.WHITE);
         score.setFont(Font.font("Arial Black", 20));
 
         field = new Field(SnakeApp.getWidth(), SnakeApp.getHeight());
-        field.addSnake(new Snake(Snake.getIntitalSnakeLength(), field));
+        field.addSnake(new Snake(Snake.getInitialSnakeLength(), field));
 
         HBox buttonBox = new HBox(15);
         buttonBox.setPadding(new Insets(15, 15, 15, 15));
-        buttonBox.setSpacing(15);
         buttonBox.setAlignment(Pos.BASELINE_CENTER);
         buttonBox.getChildren().addAll(score, buttonReturnMenu, buttonExitInGame);
         VBox root = new VBox(10, field, buttonBox);
         root.setPadding(new Insets(10));
         root.setBackground(new Background(new BackgroundFill(Color.LIMEGREEN, null, null))); // set the background color
-
         scene = new Scene(root);
 
-        AnimationTimer timer = new AnimationTimer() {
+        AnimationTimer timer = new AnimationTimer() { // infinite loop - handler is refreshed with every frame
             public void handle(long now) {
 
-                if (now - then > 1000000000 / speedFactor) { // vitesse a laquelle l'affichage est mis a jours
+                if (now - then > 1000000000 / speedFactor) { // refresh speed
                     field.update();
                     then = now;
                     score.setText("Score: " + field.score);
@@ -122,32 +132,24 @@ public class Main_UI extends Application {
                     }
 
                     if (field.isDead()) {
-
                         try {
-
-                            //Creating an image
-
+                            // creating an image with resourceStream for JAR compatibility
                             InputStream inputStream = getClass().getResourceAsStream("/gameover.gif");
                             Image image = new Image(inputStream);
 
-                            //Setting the image view
+                            // setting the image view
                             ImageView imageView = new ImageView(image);
 
-                            //setting the fit height and width of the image view
+                            // setting the fit height and width of the image view
                             imageView.setFitWidth(500);
 
-                            //Setting the preserve ratio of the image view
+                            // setting the preserve ratio of the image view
                             imageView.setPreserveRatio(true);
 
                             VBox gifBox = new VBox();
                             gifBox.setAlignment(Pos.BASELINE_CENTER);
 
-                            buttonGif = new Button("CONTINUE"); // initializes buttonBackToMenuWhenLost as a new button
-                            buttonGif.setTextFill(Color.WHITE);
-                            buttonGif.setStyle("-fx-font: 18 arial; -fx-font-weight: bold; -fx-base: #32CD32 ;"); // color
-
                             buttonGif.setOnAction(event -> {
-
                                 VBox lost = new VBox(10);
                                 lost.setPadding(new Insets(10, 10, 10, 10));
                                 Label finalScore = new Label("Your final Score is : " + field.score);
@@ -155,9 +157,7 @@ public class Main_UI extends Application {
                                 lost.getChildren().addAll(finalScore, buttonRestartWhenLost, buttonBackToMenuWhenLost,
                                         buttonExitWhenLost);
                                 lost.setAlignment(Pos.CENTER);
-
                                 lostScene = new Scene(lost, 500, 300);
-
                                 ps.setScene(lostScene);
                                 ps.setResizable(false);
                                 ps.show();
@@ -165,13 +165,11 @@ public class Main_UI extends Application {
                                 buttonRestartWhenLost.setOnAction(event1 -> {
                                     root.getChildren().clear();
                                     field = new Field(SnakeApp.getWidth(), SnakeApp.getHeight());
-                                    field.addSnake(new Snake(Snake.getIntitalSnakeLength(), field));
+                                    field.addSnake(new Snake(Snake.getInitialSnakeLength(), field));
                                     score.setText("Score : 0");
                                     root.getChildren().addAll(field, buttonBox);
-
                                     ps.setResizable(false);
                                     ps.setScene(scene);
-                                    ps.setTitle("Snake Game");
                                     ps.show();
                                 });
 
@@ -179,18 +177,12 @@ public class Main_UI extends Application {
                                     ps.setScene(startScene);
                                     ps.show();
                                 });
-
                                 buttonExitWhenLost.setOnAction(event12 -> System.exit(0));
-
                             });
 
-
                             gifBox.getChildren().addAll(imageView, buttonGif);
-
-                            gifBox.setBackground(new Background(new BackgroundFill(Color.BLACK, null, null))); // set the background color
-
+                            gifBox.setBackground(new Background(new BackgroundFill(Color.BLACK, null, null)));
                             gifScene = new Scene(gifBox, 500, 350);
-
                             ps.setScene(gifScene);
                             ps.show();
 
@@ -203,8 +195,10 @@ public class Main_UI extends Application {
             }
         };
 
+        // start animationTimer
         timer.start();
 
+        // listen to keyboard input for mvt:
         scene.setOnKeyPressed(e -> {
             if (e.getCode().equals(KeyCode.UP) && field.snake.getDirection() != Block.DOWN) {
                 setDirection(field.snake, Block.UP);
@@ -220,10 +214,12 @@ public class Main_UI extends Application {
             }
         });
 
+        // Button event handlers:
+
         buttonStart.setOnAction(event -> {
             root.getChildren().clear();
             field = new Field(SnakeApp.getWidth(), SnakeApp.getHeight());
-            field.addSnake(new Snake(Snake.getIntitalSnakeLength(), field));
+            field.addSnake(new Snake(Snake.getInitialSnakeLength(), field));
             score.setText("Score : 0");
             root.getChildren().addAll(field, buttonBox);
 
@@ -233,9 +229,18 @@ public class Main_UI extends Application {
             ps.show();
         });
 
-        // met en action le boutton pour quitter interface
         buttonExit.setOnAction(event -> System.exit(0));
 
+        buttonReturnMenu.setOnAction(event -> {
+            ps.setScene(startScene);
+            ps.show();
+        });
+
+        buttonExitInGame.setOnAction(event -> System.exit(0));
+
+        buttonSpeed.setOnAction(event -> buttonSpeed.setText(setSpeed()));
+
+        // Initial window:
         start.getChildren().addAll(buttonStart, buttonSpeed, buttonExit);
         start.setAlignment(Pos.CENTER);
         startScene = new Scene(start, 500, 300);
@@ -243,17 +248,6 @@ public class Main_UI extends Application {
         ps.setTitle("Snake Game");
         ps.setScene(startScene);
         ps.show();
-
-        buttonReturnMenu.setOnAction(event -> {
-            ps.setScene(startScene);
-            ps.show();
-        });
-
-        // met en action le boutton pour quitter
-        buttonExitInGame.setOnAction(event -> System.exit(0));
-
-        // met en action le boutton pour la vitesse
-        buttonSpeed.setOnAction(event -> buttonSpeed.setText(setSpeed()));
     }
 
     public void setDirection(Snake snake, int direction) {
@@ -266,6 +260,7 @@ public class Main_UI extends Application {
         }
     }
 
+    // method to set the speed on startup:
     public String setSpeed() {
         String[] speedArray = {"EASY", "MEDIUM", "HARD",};
         int[] factorArray = {8, 12, 16};
