@@ -1,14 +1,14 @@
 package address.model;
 
-import java.util.ArrayList;
-
 import address.SnakeApp;
 import address.presentation.Block;
 import address.presentation.Field;
 
+import java.util.ArrayList;
+
 public class Snake {
 
-	public ArrayList<Block> blocks = new ArrayList<Block>();
+	public ArrayList<Block> blocks = new ArrayList<>();
 
 	public static int intitalSnakeLength = 5;
 
@@ -22,8 +22,8 @@ public class Snake {
 		head = new Block(initialPositionX, initialPositionY, null, field);
 		blocks.add(head);
 
-		head.setArcHeight(SnakeApp.getBlockSize()  / 2);
-		head.setArcWidth(SnakeApp.getBlockSize() / 2);
+		head.setArcHeight(SnakeApp.getBlockSize()  / 2.0);
+		head.setArcWidth(SnakeApp.getBlockSize() / 2.0);
 
 		tail = head;
 
