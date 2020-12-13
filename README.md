@@ -95,8 +95,13 @@ Here is a short introduction to our game:
 
 ### Important code snippets
 In this section we want to discuss in depth the code that permits to create an apple at a random location in the field.
-To do this we will first look into the Constructor "Food" and explain how it works.
+To do this we will first look into the Constructor "Food" and explain how it works. 
+The constructor is then called with addFood() each time we need to place another Apple.
 #### Food() in Food.java
+The constructor takes the x and y values and mutiplies them by the BlockSize to calculate the position of the object Food.
+In same time it changes the color of the Apple randomly every time the constructor is called and the border is set to black.
+Via setArcHeight and setArcWidth we change the aspect of the object to a circle, more representativ of an actual Apple.
+
 	public Food(int x, int y) {
 
 		super(SnakeApp.getBlockSize(), SnakeApp.getBlockSize());
@@ -111,9 +116,13 @@ To do this we will first look into the Constructor "Food" and explain how it wor
 		setStroke(Color.BLACK);
 		setArcHeight(SnakeApp.getBlockSize());
 		setArcWidth(SnakeApp.getBlockSize());
-
 	}    
+	
 #### addFood() in Field.java
+In this Method we generate two random numbers inside the field to represent the location of the new Apple.
+We create another object food of type Food and give it the x and y position that we generated before.
+After this we add it to the field and remove the old one.
+
     public void addFood() {
         int randomX = (int) (Math.random() * width);
         int randomY = (int) (Math.random() * height);
@@ -124,6 +133,7 @@ To do this we will first look into the Constructor "Food" and explain how it wor
         getChildren().remove(this.food);
         this.food = food;
     }
+    
 ## Documentation - Sprint 2
 ### Tasklist
 | Tasknumber | Tasks | Userstory | Estimated effort |
