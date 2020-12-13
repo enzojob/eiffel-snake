@@ -145,8 +145,30 @@ After this we add it to the field and remove the old one.
 | 5 | Menu presentation | 5 | 2 Stunden |
 
 ### Important code snippets
+In this section we want to discuss the animation shown at the end of the game.
+
+    public String setSpeed() {
+        String[] speedArray = {"EASY", "MEDIUM", "HARD",};
+        int[] factorArray = {8, 12, 16};
+
+        if (speedCounter < 2) {
+            speedCounter++;
+        } else
+            speedCounter = 0;
+        speedFactor = factorArray[speedCounter];
+        return speedArray[speedCounter];
+    }
 
 
+    
+
+       //Creating an image
+
+                            InputStream inputStream = getClass().getResourceAsStream("/gameover.gif");
+                            Image image = new Image(inputStream);
+
+                            //Setting the image view
+                            ImageView imageView = new ImageView(image);
 
 ## Test cases
 | Test Case # | Description | Test Data | Expected Result | Actual Result | Pass/Fail |
