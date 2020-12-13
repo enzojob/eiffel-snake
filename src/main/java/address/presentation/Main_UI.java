@@ -115,7 +115,7 @@ public class Main_UI extends Application {
         buttonBox.getChildren().addAll(score, buttonReturnMenu, buttonExitInGame);
         VBox root = new VBox(10, field, buttonBox);
         root.setPadding(new Insets(10));
-        root.setBackground(new Background(new BackgroundFill(Color.LIMEGREEN, null, null))); // set the background color
+        root.setBackground(new Background(new BackgroundFill(Color.LIMEGREEN, null, null)));
         scene = new Scene(root);
 
         AnimationTimer timer = new AnimationTimer() { // infinite loop - handler is refreshed with every frame

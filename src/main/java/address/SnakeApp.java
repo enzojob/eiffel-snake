@@ -16,7 +16,7 @@ public class SnakeApp {
     private static Field field;
 
     @SuppressWarnings("static-access")
-    public static void main(String[] args) {
+    public static void main(String[] args) { // instantiates itself
 
         field = new Field(width, height);
         snake = new Snake(Snake.getInitialSnakeLength(), field);
