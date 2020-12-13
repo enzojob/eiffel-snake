@@ -54,8 +54,8 @@ public class Field extends Pane {
 
     public boolean isDead() {
         for (Block block : blocks) {
-            if (block != snake.head) {
-                if (block.posX == snake.head.posX && block.posY == snake.head.posY) {
+            if (block != snake.getHead()) {
+                if (block.posX == snake.getHead().posX && block.posY == snake.getHead().posY) {
                     blocks.clear(); // necessary to restart the game
                     return true;
                 }
@@ -66,8 +66,8 @@ public class Field extends Pane {
 
     // add Blocks from Snake to ArrayList in the Field
     public void addNewBlock() {
-        Block block = new Block(snake.tail.oldPosX, snake.tail.oldPosY, snake.tail, this);
-        snake.tail = block;
+        Block block = new Block(snake.getTail().oldPosX, snake.getTail().oldPosY, snake.getTail(), this);
+        snake.setTail(block);
         addBlock(block);
     }
 
@@ -92,7 +92,7 @@ public class Field extends Pane {
         if (food == null) {
             return false;
         }
-        return food.getPosX() == snake.head.posX && food.getPosY() == snake.head.posY;
+        return food.getPosX() == snake.getHead().posX && food.getPosY() == snake.getHead().posY;
     }
 
     public int getW() {

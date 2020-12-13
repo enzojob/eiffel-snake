@@ -17,8 +17,8 @@ public class Snake {
 
     public static int initialSnakeLength = 5;
 
-    public Block head;
-    public Block tail;
+    private Block head;
+    private Block tail;
 
     public Snake(int initialSnakeLength, Field field) {
 
@@ -39,6 +39,18 @@ public class Snake {
             tail = block;
         }
 
+    }
+
+    public Block getHead() {
+        return head;
+    }
+
+    public Block getTail() {
+        return tail;
+    }
+
+    public void setTail(Block tail) {
+        this.tail = tail;
     }
 
     public int getDirection() {
