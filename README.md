@@ -62,8 +62,10 @@ Here is a short introduction to our game:
 * You can choose between three level of speed: EASY, MEDIUM, HARD 
 * The goal is to eat as many apples as possible to make the snake grow  
 * Each apple eaten gives 20 points 
-* When you bump into yourself you will die 
 * You can return to the menu or exit the game at any time 
+* When you bump into yourself you will die
+
+![end](https://user-images.githubusercontent.com/73689853/102016250-4349d900-3d60-11eb-94c6-0e31b82b5a2e.PNG)
 
 ## Userstories
 | **Userstory Nr.** |   **Userstories**  | **Storypoints**  |  **Priority**  |  **Acceptance criteria** |
