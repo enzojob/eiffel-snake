@@ -3,17 +3,17 @@
   realizations="false" associations="false" dependencies="false" nesting-relationships="false" router="FAN">  
   <package id="1" language="java" name="address" project="eiffel-snake" file="/eiffel-snake/src/main/java/address" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="406" width="495" x="71" y="40"/>    
+    <position height="406" width="495" x="297" y="117"/>    
     <display autosize="false" stereotype="false" sort-features="false" accessors="true"/>  
   </package>  
   <package id="2" language="java" name="address.model" project="eiffel-snake" 
     file="/eiffel-snake/src/main/java/address/model" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="143" width="220" x="84" y="164"/>    
+    <position height="143" width="220" x="311" y="247"/>    
     <display autosize="false" stereotype="false" sort-features="false" accessors="true"/>  
   </package>  
   <package id="3" language="java" name="address.presentation" project="eiffel-snake" 
     file="/eiffel-snake/src/main/java/address/presentation" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="136" width="235" x="314" y="170"/>    
+    <position height="139" width="237" x="541" y="250"/>    
     <display autosize="false" stereotype="false" sort-features="false" accessors="true"/>  
   </package>  
   <classifier-display autosize="false" stereotype="false" package="true" initial-value="false" signature="false" 
