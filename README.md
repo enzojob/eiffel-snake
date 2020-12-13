@@ -190,6 +190,9 @@ We used InputStrem to call the gameover.gif file belonging to ressources. We tha
         //Setting the image view
         ImageView imageView = new ImageView(image);
 	
+	
+![Gif](https://user-images.githubusercontent.com/73689853/102015309-1e9f3280-3d5b-11eb-9609-02f6ddd5d69f.PNG)	
+	
 ## Diagramm
 ### Package Diagramm 
 ![packageDiagramm](https://user-images.githubusercontent.com/73689853/102015263-bcdec880-3d5a-11eb-963d-0a9c28907eac.PNG)
@@ -198,9 +201,7 @@ We used InputStrem to call the gameover.gif file belonging to ressources. We tha
 ![classDiagramm](https://user-images.githubusercontent.com/73689853/102015294-f1eb1b00-3d5a-11eb-8f48-47fab0e2a428.PNG)
 
 ### Sequence Diagramm
-
-
-
+![mainAppSeqDiagramm](https://user-images.githubusercontent.com/73689853/102015399-b3a22b80-3d5b-11eb-8efc-366877c61db1.png)
 
 ## Test cases
 | Test Case # | Description | Test Data | Expected Result | Actual Result | Pass/Fail |
