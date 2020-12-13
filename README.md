@@ -1,8 +1,10 @@
 # SNAKEIFFEL
 
 Coding II & Software Engineering - Project
-
 Members: Enzo Job, Michiel Kindt, Théo Rey
+
+![snakeGame](https://user-images.githubusercontent.com/73689853/102015658-37104c80-3d5d-11eb-9b5e-607e7d5ad895.PNG)
+
 
 ## Table of contents
 1. [Prelude](#prelude)
