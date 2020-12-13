@@ -205,3 +205,6 @@ We used InputStrem to call the gameover.gif file belonging to ressources. We tha
 | 10 | Is the endscore shown on the screen? | Game Over | The Endscore is shown on the screen at Game Over| As expected | Pass |
 
 ![packageDiagramm](https://user-images.githubusercontent.com/73689853/102015263-bcdec880-3d5a-11eb-963d-0a9c28907eac.PNG)
+
+![classDiagramm](https://user-images.githubusercontent.com/73689853/102015294-f1eb1b00-3d5a-11eb-8f48-47fab0e2a428.PNG)
+
