@@ -7,17 +7,20 @@ import javafx.scene.paint.Color;
 
 import java.util.ArrayList;
 
+/*
+ * This class generates a field that calls food, block and snake objects. It checks whether the head is on the food position, and manages the visual side of the app.
+ * */
+
 public class Field extends Pane {
 
     private int width, height;
-
     ArrayList<Block> blocks = new ArrayList<>();
-
     int score = 0;
     Food food;
     Snake snake;
 
     public Field(int width, int height) {
+
         this.width = width;
         this.height = height;
 
@@ -26,6 +29,7 @@ public class Field extends Pane {
         setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, null, new BorderWidths(1))));
 
         addFood();
+
     }
 
     public void addSnake(Snake snake) {
@@ -35,6 +39,7 @@ public class Field extends Pane {
         }
     }
 
+    // update method in the field: update every block
     public void update() {
         for (Block block : blocks) {
             block.update();
@@ -51,7 +56,7 @@ public class Field extends Pane {
         for (Block block : blocks) {
             if (block != snake.head) {
                 if (block.posX == snake.head.posX && block.posY == snake.head.posY) {
-                    blocks.clear();
+                    blocks.clear(); // necessary to restart the game
                     return true;
                 }
             }
@@ -59,6 +64,7 @@ public class Field extends Pane {
         return false;
     }
 
+    // add Blocks from Snake to ArrayList in the Field
     public void addNewBlock() {
         Block block = new Block(snake.tail.oldPosX, snake.tail.oldPosY, snake.tail, this);
         snake.tail = block;

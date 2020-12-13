@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>address</OriginalElement>
+  <nodes>
+    <node x="290.8415842490843" y="711.0">address.SnakeApp</node>
+    <node x="107.23081043956043" y="0.0">address.presentation.Block</node>
+    <node x="204.2165842490843" y="964.0">address.model.Snake</node>
+    <node x="405.6040842490843" y="44.0">address.presentation.Food</node>
+    <node x="305.5" y="243.0">address.presentation.Field</node>
+    <node x="58.50000000000003" y="532.0">address.presentation.Main_UI</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic Group" zoom="0.543940795559667" x="297.5" y="530.5" />
+  <SelectedNodes>
+    <node>address.SnakeApp</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

@@ -6,31 +6,31 @@ import javafx.scene.shape.Rectangle;
 
 public class Food extends Rectangle {
 
-	int posX, posY;
+    int posX, posY;
 
-	public Food(int x, int y) {
+    public Food(int x, int y) {
 
-		super(SnakeApp.getBlockSize(), SnakeApp.getBlockSize());
+        super(SnakeApp.getBlockSize(), SnakeApp.getBlockSize());
 
-		this.posX = x;
-		this.posY = y;
+        this.posX = x;
+        this.posY = y;
 
-		setTranslateX(posX * SnakeApp.getBlockSize());
-		setTranslateY(posY * SnakeApp.getBlockSize());
+        setTranslateX(posX * SnakeApp.getBlockSize());
+        setTranslateY(posY * SnakeApp.getBlockSize());
 
-		setFill(Color.color(Math.random(), Math.random(), Math.random()));
-		setStroke(Color.BLACK);
-		setArcHeight(SnakeApp.getBlockSize());
-		setArcWidth(SnakeApp.getBlockSize());
+        setFill(Color.color(Math.random(), Math.random(), Math.random()));
+        setStroke(Color.BLACK);
+        setArcHeight(SnakeApp.getBlockSize());
+        setArcWidth(SnakeApp.getBlockSize());
 
-	}
+    }
 
-	public int getPosX() {
-		return posX;
-	}
+    public int getPosX() {
+        return posX;
+    }
 
-	public int getPosY() {
-		return posY;
-	}
+    public int getPosY() {
+        return posY;
+    }
 
 }
