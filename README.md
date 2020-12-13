@@ -146,6 +146,86 @@ After this we add it to the field and remove the old one.
 
 ### Important code snippets
 
+  if (field.isDead()) {
+
+                        try {
+
+                            //Creating an image
+                            InputStream inputStream = getClass().getResourceAsStream("/gameover.gif");
+                            Image image = new Image(inputStream);
+
+                            //Setting the image view
+                            ImageView imageView = new ImageView(image);
+
+                            //setting the fit height and width of the image view
+                            imageView.setFitWidth(500);
+
+                            //Setting the preserve ratio of the image view
+                            imageView.setPreserveRatio(true);
+
+                            VBox gifBox = new VBox();
+                            gifBox.setAlignment(Pos.BASELINE_CENTER);
+
+                            buttonGif = new Button("CONTINUE"); // initializes buttonBackToMenuWhenLost as a new button
+                            buttonGif.setTextFill(Color.WHITE);
+                            buttonGif.setStyle("-fx-font: 18 arial; -fx-font-weight: bold; -fx-base: #32CD32 ;"); // color
+
+                            buttonGif.setOnAction(event -> {
+
+                                VBox lost = new VBox(10);
+                                lost.setPadding(new Insets(10, 10, 10, 10));
+                                Label finalScore = new Label("Your final Score is : " + field.score);
+                                finalScore.setFont(Font.font("Arial Black", 22));
+                                lost.getChildren().addAll(finalScore, buttonRestartWhenLost, buttonBackToMenuWhenLost,
+                                        buttonExitWhenLost);
+                                lost.setAlignment(Pos.CENTER);
+
+                                lostScene = new Scene(lost, 500, 300);
+
+                                ps.setScene(lostScene);
+                                ps.setResizable(false);
+                                ps.show();
+
+                                buttonRestartWhenLost.setOnAction(event1 -> {
+                                    root.getChildren().clear();
+                                    field = new Field(SnakeApp.getWidth(), SnakeApp.getHeight());
+                                    field.addSnake(new Snake(Snake.getIntitalSnakeLength(), field));
+                                    score.setText("Score : 0");
+                                    root.getChildren().addAll(field, buttonBox);
+
+                                    ps.setResizable(false);
+                                    ps.setScene(scene);
+                                    ps.setTitle("Snake Game");
+                                    ps.show();
+                                });
+
+                                buttonBackToMenuWhenLost.setOnAction(event13 -> {
+                                    ps.setScene(startScene);
+                                    ps.show();
+                                });
+
+                                buttonExitWhenLost.setOnAction(event12 -> System.exit(0));
+
+                            });
+
+
+                            gifBox.getChildren().addAll(imageView, buttonGif);
+
+                            gifBox.setBackground(new Background(new BackgroundFill(Color.BLACK, null, null))); // set the background color
+
+                            gifScene = new Scene(gifBox, 500, 350);
+
+                            ps.setScene(gifScene);
+                            ps.show();
+
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                }
+            }
+        };
 
 ## Test cases
 | Test Case # | Description | Test Data | Expected Result | Actual Result | Pass/Fail |
