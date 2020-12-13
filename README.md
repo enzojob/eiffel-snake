@@ -94,7 +94,36 @@ Here is a short introduction to our game:
 | 13 | Prevent forbidden movements | 8 | 2 Stunden |
 
 ### Important code snippets
+In this section we want to discuss in depth the code that permits to create an apple at a random location in the field.
+To do this we will first look into the Constructor "Food" and explain how it works.
+#### Food() in Food.java
+	public Food(int x, int y) {
 
+		super(SnakeApp.getBlockSize(), SnakeApp.getBlockSize());
+
+		this.posX = x;
+		this.posY = y;
+
+		setTranslateX(posX * SnakeApp.getBlockSize());
+		setTranslateY(posY * SnakeApp.getBlockSize());
+
+		setFill(Color.color(Math.random(), Math.random(), Math.random()));
+		setStroke(Color.BLACK);
+		setArcHeight(SnakeApp.getBlockSize());
+		setArcWidth(SnakeApp.getBlockSize());
+
+	}    
+#### addFood() in Field.java
+    public void addFood() {
+        int randomX = (int) (Math.random() * width);
+        int randomY = (int) (Math.random() * height);
+
+        Food food = new Food(randomX, randomY);
+
+        getChildren().add(food);
+        getChildren().remove(this.food);
+        this.food = food;
+    }
 ## Documentation - Sprint 2
 ### Tasklist
 | Tasknumber | Tasks | Userstory | Estimated effort |
