@@ -1,49 +1,55 @@
 package address.model;
 
-import java.util.ArrayList;
-
 import address.SnakeApp;
 import address.presentation.Block;
 import address.presentation.Field;
-import address.presentation.Main_UI;
+
+import java.util.ArrayList;
+
+/*
+ * This is the snake class, with a constructor that generates a snake in the middle of the field.
+ * The direction methods call the block class
+ * */
 
 public class Snake {
 
-	public ArrayList<Block> blocks = new ArrayList<Block>();
+    public ArrayList<Block> blocks = new ArrayList<>();
 
-	public static int intitalSnakeLength = 5;
+    public static int initialSnakeLength = 5;
 
-	public Block head;
-	public Block tail;
+    public Block head;
+    public Block tail;
 
-	public Snake(int il, Field f) {
-		int ipx = f.getW() / 2;
-		int ipy = f.getH() / 2;
+    public Snake(int initialSnakeLength, Field field) {
 
-		head = new Block(ipx, ipy, null, f);
-		blocks.add(head);
+        int initialPositionX = field.getW() / 2;
+        int initialPositionY = field.getH() / 2;
 
-		head.setArcHeight(SnakeApp.getBlockSize()  / 2);
-		head.setArcWidth(SnakeApp.getBlockSize() / 2);
+        head = new Block(initialPositionX, initialPositionY, null, field);
+        blocks.add(head);
 
-		tail = head;
+        head.setArcHeight(SnakeApp.getBlockSize() / 2.0);
+        head.setArcWidth(SnakeApp.getBlockSize() / 2.0);
 
-		for (int i = 1; i < il; i++) {
-			Block b = new Block(ipx + i, ipy, tail, f);
-			blocks.add(b);
-			tail = b;
-		}
-	}
+        tail = head;
 
-	public int getDirection() {
-		return head.direction;
-	}
+        for (int i = 1; i < initialSnakeLength; i++) {
+            Block block = new Block(initialPositionX + i, initialPositionY, tail, field);
+            blocks.add(block);
+            tail = block;
+        }
 
-	public static int getIntitalSnakeLength() {
-		return intitalSnakeLength;
-	}
+    }
 
-	public void setDirection(int d) {
-		head.direction = d;
-	}
+    public int getDirection() {
+        return head.direction;
+    }
+
+    public static int getInitialSnakeLength() {
+        return initialSnakeLength;
+    }
+
+    public void setDirection(int direction) {
+        head.direction = direction;
+    }
 }

@@ -1,107 +1,105 @@
 package address.presentation;
 
-import java.util.ArrayList;
-
 import address.SnakeApp;
 import address.model.Snake;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.Border;
-import javafx.scene.layout.BorderStroke;
-import javafx.scene.layout.BorderStrokeStyle;
-import javafx.scene.layout.BorderWidths;
-import javafx.scene.layout.Pane;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+
+import java.util.ArrayList;
+
+/*
+ * This class generates a field that calls food, block and snake objects. It checks whether the head is on the food position, and manages the visual side of the app.
+ * */
 
 public class Field extends Pane {
 
-	private int w, h;
+    private int width, height;
+    ArrayList<Block> blocks = new ArrayList<>();
+    int score = 0;
+    Food food;
+    Snake snake;
 
-	ArrayList<Block> blocks = new ArrayList<Block>();
+    public Field(int width, int height) {
 
-	int score = 0;
-	Food f;
-	Snake snake;
+        this.width = width;
+        this.height = height;
 
-	public Field(int width, int height) {
-		w = width;
-		h = height;
+        setMinSize(this.width * SnakeApp.getBlockSize(), this.height * SnakeApp.getBlockSize());
+        setBackground(new Background(new BackgroundFill(Color.AZURE, null, null)));
+        setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, null, new BorderWidths(1))));
 
-		setMinSize(w * SnakeApp.getBlockSize(), h * SnakeApp.getBlockSize());
-		setBackground(new Background(new BackgroundFill(Color.AZURE, null, null)));
-		setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, null, new BorderWidths(1))));
+        addFood();
 
-		addFood();
-	}
+    }
 
-	public void addSnake(Snake s) {
-		snake = s;
-		for (Block b : s.blocks) {
-			addBlock(b);
-		}
-	}
+    public void addSnake(Snake snake) {
+        this.snake = snake;
+        for (Block block : snake.blocks) {
+            addBlock(block);
+        }
+    }
 
-	public void update() {
-		for (Block b : blocks) {
-			b.update();
-		}
+    // update method in the field: update every block
+    public void update() {
+        for (Block block : blocks) {
+            block.update();
+        }
 
-		if (isEaten(f)) {
-			score += 20;
-			addFood();
-			addNewBlock();
-		}
-	}
+        if (isEaten(food)) {
+            score += 20;
+            addFood();
+            addNewBlock();
+        }
+    }
 
-	public boolean isDead() {
-		for (Block b : blocks) {
-			if (b != snake.head) {
-				if (b.posX == snake.head.posX && b.posY == snake.head.posY) {
-					return true;
-				}
-			}
-		}
-		return false;
-	}
+    public boolean isDead() {
+        for (Block block : blocks) {
+            if (block != snake.head) {
+                if (block.posX == snake.head.posX && block.posY == snake.head.posY) {
+                    blocks.clear(); // necessary to restart the game
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 
-	public void addNewBlock() {
-		Block b = new Block(snake.tail.oldPosX, snake.tail.oldPosY, snake.tail, this);
-		snake.tail = b;
-		addBlock(b);
-	}
+    // add Blocks from Snake to ArrayList in the Field
+    public void addNewBlock() {
+        Block block = new Block(snake.tail.oldPosX, snake.tail.oldPosY, snake.tail, this);
+        snake.tail = block;
+        addBlock(block);
+    }
 
-	private void addBlock(Block b) {
-		getChildren().add(b);
-		blocks.add(b);
-		b.setFill(Color.color(Math.random(), Math.random(), Math.random()));
+    private void addBlock(Block block) {
+        getChildren().add(block);
+        blocks.add(block);
+        block.setFill(Color.color(Math.random(), Math.random(), Math.random()));
+    }
 
-	}
+    public void addFood() {
+        int randomX = (int) (Math.random() * width);
+        int randomY = (int) (Math.random() * height);
 
-	public void addFood() {
-		int randomX = (int) (Math.random() * w);
-		int randomY = (int) (Math.random() * h);
+        Food food = new Food(randomX, randomY);
 
-		Food food = new Food(randomX, randomY);
+        getChildren().add(food);
+        getChildren().remove(this.food);
+        this.food = food;
+    }
 
-		getChildren().add(food);
-		getChildren().remove(f);
-		f = food;
+    public boolean isEaten(Food food) {
+        if (food == null) {
+            return false;
+        }
+        return food.getPosX() == snake.head.posX && food.getPosY() == snake.head.posY;
+    }
 
-	}
+    public int getW() {
+        return width;
+    }
 
-	public boolean isEaten(Food f) {
-		if (f == null) {
-			return false;
-		}
-		return f.getPosX() == snake.head.posX && f.getPosY() == snake.head.posY;
-	}
-
-	public int getW() {
-		return w;
-	}
-
-	public int getH() {
-		return h;
-	}
-
+    public int getH() {
+        return height;
+    }
 }

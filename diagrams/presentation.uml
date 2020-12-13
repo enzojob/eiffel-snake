@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>address.presentation</OriginalElement>
+  <nodes>
+    <node x="155.16666666666663" y="0.0">address.presentation.Block</node>
+    <node x="4.166666666666657" y="44.0">address.presentation.Food</node>
+    <node x="88.56666666666663" y="223.0">address.presentation.Field</node>
+    <node x="108.52499999999998" y="502.0">address.presentation.Main_UI</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic Group" zoom="0.9173166926677067" x="171.5" y="310.5" />
+  <SelectedNodes>
+    <node>address.presentation.Block</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
