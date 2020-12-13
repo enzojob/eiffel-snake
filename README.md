@@ -1,8 +1,7 @@
 # SNAKEIFFEL
+## Coding II & Software Engineering - Project
 
-Coding II & Software Engineering - Project
-
-Members: Enzo Job, Michiel Kindt, Théo Rey
+## Members: Enzo Job, Michiel Kindt, Théo Rey
 
 ![snakeGame](https://user-images.githubusercontent.com/73689853/102015714-80f93280-3d5d-11eb-9317-1f27883470c3.PNG)
 
@@ -191,13 +190,9 @@ This results in the impression that the snake moves at different speeds.
 We also wanted to talk about another important code snippet regarding the display of the "Game Over" gif.
 We used InputStrem to call the gameover.gif file belonging to ressources. We than created an object image of type Image and displayed it on the screen.
 		    
-       	//Creating an image
 	InputStream inputStream = getClass().getResourceAsStream("/gameover.gif");
         Image image = new Image(inputStream);
-
-        //Setting the image view
         ImageView imageView = new ImageView(image);
-	
 	
 ![Gif](https://user-images.githubusercontent.com/73689853/102015309-1e9f3280-3d5b-11eb-9609-02f6ddd5d69f.PNG)	
 	
