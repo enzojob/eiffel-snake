@@ -4,8 +4,6 @@ Members: Enzo Job, Michiel Kindt, Théo Rey
 
 ![snakeGame](https://user-images.githubusercontent.com/73689853/102015714-80f93280-3d5d-11eb-9317-1f27883470c3.PNG)
 
-
-
 ## Table of contents
 1. [Prelude](#prelude)
     + [Goal](#goal)
@@ -45,16 +43,16 @@ The aim is to combine the skills and competencies learned in programming and sof
 * The program should be able to be executed using a specially created JAR file and the command java-jar xxxxx.jar.
 
 ## Build instructions
-+ Make sure that you have installed a Java Runtime Environment on your computer.
-+ Download the file from our repository in Github.
-+ Unzip the downloaded file to the desired destination folder.
-+ Copy the path of the desired version file (.jar) to the clipboard.
-+ Open the console of your computer.
-+ Enter java -jar followed by the copied path (.jar).
+* Make sure that you have installed a Java Runtime Environment on your computer.
+* Download the file from our repository in Github.
+* Unzip the downloaded file to the desired destination folder.
+* Copy the path of the desired version file (.jar) to the clipboard.
+* Open the console of your computer.
+* Enter java -jar followed by the copied path (.jar).
 
 		Example: java -jar C:\Users\ejob\Downloads\eiifel-snake-2.0-SNAPSHOT.jar		
-+ Confirm your entry with Enter, the game should start.
-+ Have Fun!
+* Confirm your entry with Enter, the game should start.
+* Have Fun!
 
 ## Operating manual
 ![start](https://user-images.githubusercontent.com/73689853/102016019-1648f680-3d5f-11eb-8e07-6ce4313c0534.PNG)
